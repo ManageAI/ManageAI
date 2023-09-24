@@ -2,7 +2,7 @@
   "name": "apps/manage-pro",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "frontend",
+  "prefix": "app",
   "sourceRoot": "apps/manage-pro/src",
   "tags": [],
   "targets": {
