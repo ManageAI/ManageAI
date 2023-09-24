@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "web",
-  "sourceRoot": "apps/website/src",
+  "sourceRoot": "apps",
   "tags": [],
   "targets": {
     "build": {
@@ -15,8 +15,23 @@
         "main": "apps/website/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/website/tsconfig.app.json",
-        "assets": ["apps/website/src/favicon.ico", "apps/website/src/assets"],
-        "styles": ["apps/website/src/styles.scss"],
+        "assets": [
+          "apps/website/src/favicon.ico",
+          {
+            "glob": "**/*",
+            "input": "apps/website/src/assets",
+            "output": "assets"
+          },
+          {
+            "glob": "**/*",
+            "input": "apps/shared/assets",
+            "output": "shared/assets/"
+          }
+        ],
+        "styles": [
+          "apps/website/src/styles.scss",
+          "apps/shared/assets/scss/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
