@@ -5,9 +5,10 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
-  background-color: $color-secondary;
   z-index: 10;
   padding: 15px;
+  background-color: $color-primary;
+  color: $color-secondary;
 
   &__logo {
     display: flex;
@@ -33,18 +34,20 @@
 
   &__link {
     text-decoration: none;
-    color: $color-tertiary;
+    color: $color-secondary;
 
     &--login {
       padding: 5px 15px;
       border: 1px solid $color-tertiary;
       border-radius: 20px;
       transition: 0.3s;
+      background-color: $color-tertiary;
+      color: $color-secondary;
       cursor: pointer;
 
       &:hover {
-        background-color: $color-tertiary;
-        color: $color-secondary;
+        background-color: transparent;
+        color: $color-tertiary;
       }
     }
   }
