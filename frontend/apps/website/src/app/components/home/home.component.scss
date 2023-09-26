@@ -61,20 +61,10 @@
   }
 
   &__button {
+    @include button;
     font-size: 1.5rem;
-    border: 1px solid $color-tertiary;
-    border-radius: 50px;
     margin: 45px;
-    background-color: $color-tertiary;
-    color: $color-secondary;
     padding: 20px 75px;
-    transition: 0.3s;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $color-secondary;
-      color: $color-tertiary;
-    }
   }
 
   &__find {
