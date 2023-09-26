@@ -5,9 +5,15 @@ import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HomeComponent } from './components/home/home.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    NavigationComponent,
+    HomeComponent,
+    AboutUsComponent,
+  ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),

@@ -1,0 +1,15 @@
+@use './variables';
+
+@mixin button {
+  border: 1px solid $color-tertiary;
+  border-radius: 50px;
+  background-color: $color-tertiary;
+  color: $color-secondary;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-secondary;
+    color: $color-tertiary;
+  }
+}
