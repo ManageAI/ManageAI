@@ -4,6 +4,7 @@
   display: flex;
   padding-top: 67px;
   min-height: 100vh;
+  border-bottom: 2px solid $color-primary;
 
   &__content {
     display: flex;

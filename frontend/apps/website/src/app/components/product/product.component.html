@@ -1,1 +1,62 @@
-<p>product works!</p>
+<section class="section">
+  <div class="video-container">
+    <video playsInline autoplay loop>
+      <source src="assets/videos/curcuit-abstraction.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="product-wrapper">
+    <h2>ManagePro</h2>
+    <h3>- Effortless Management at Your Fingertips -</h3>
+  </div>
+
+  <div class="card-container">
+    <img src="assets/images/curcuit.png" alt="" />
+    <div
+      class="card"
+      #cardElement
+      [@slideInOut]="animationStates[0] ? animationStates[0] : 'right'"
+    >
+      <img class="xd" src="assets/images/dashboard.png" alt="" srcset="" />
+    </div>
+  </div>
+  <div class="card-container">
+    <div
+      class="card"
+      #cardElement
+      [@slideInOut]="animationStates[1] ? animationStates[1] : 'left'"
+    >
+      <img class="xd" src="assets/images/dashboard.png" alt="" srcset="" />
+    </div>
+    <img src="assets/images/curcuit.png" alt="" />
+  </div>
+  <div class="card-container">
+    <img src="assets/images/curcuit.png" alt="" />
+    <div
+      class="card"
+      #cardElement
+      [@slideInOut]="animationStates[2] ? animationStates[2] : 'right'"
+    >
+      <img class="xd" src="assets/images/dashboard.png" alt="" srcset="" />
+    </div>
+  </div>
+  <div class="card-container">
+    <div
+      class="card"
+      #cardElement
+      [@slideInOut]="animationStates[3] ? animationStates[3] : 'left'"
+    >
+      <img class="xd" src="assets/images/dashboard.png" alt="" srcset="" />
+    </div>
+    <img src="assets/images/curcuit.png" alt="" />
+  </div>
+  <div class="card-container">
+    <img src="assets/images/curcuit.png" alt="" />
+    <div
+      class="card"
+      #cardElement
+      [@slideInOut]="animationStates[4] ? animationStates[4] : 'right'"
+    >
+      <img class="xd" src="assets/images/dashboard.png" alt="" srcset="" />
+    </div>
+  </div>
+</section>
