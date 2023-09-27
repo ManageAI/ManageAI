@@ -47,18 +47,22 @@ form {
 input[type='text'] {
   margin: 10px;
   width: 100%;
-  padding: 25px 20px;
-  background-color: rgba(0, 0, 0, 0.034);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.041);
   border: none;
   border-radius: 20px;
+  font-size: 1rem;
 }
 textarea {
   margin: 10px;
-  background-color: rgba(0, 0, 0, 0.034);
+  background-color: rgba(0, 0, 0, 0.041);
   border-radius: 20px;
   border: none;
   width: 100%;
-  padding: 10px 20px;
+  height: 200px;
+  padding: 20px;
+  font-size: 1rem;
+  resize: none;
 }
 
 button {
@@ -97,5 +101,5 @@ img {
 }
 
 a {
-  font-size: 16px;
+  font-size: 1rem;
 }
