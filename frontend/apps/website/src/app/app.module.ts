@@ -6,6 +6,8 @@ import { appRoutes } from './app.routes';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ProductComponent } from './components/product/product.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -13,9 +15,11 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     NavigationComponent,
     HomeComponent,
     AboutUsComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [],
