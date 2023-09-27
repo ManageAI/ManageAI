@@ -1,62 +1,104 @@
 <section class="section">
-  <div class="video-container">
-    <video playsInline autoplay loop>
+  <div class="section__video-container">
+    <video class="section__video-container--video" playsInline autoplay loop>
       <source src="assets/videos/curcuit-abstraction.mp4" type="video/mp4" />
     </video>
   </div>
-  <div class="product-wrapper">
-    <h2>ManagePro</h2>
-    <h3>- Effortless Management at Your Fingertips -</h3>
+  <div class="section__product-wrapper">
+    <h2 class="section__product-wrapper--title">ManagePro</h2>
+    <h3 class="section__product-wrapper--subtitle">
+      - Effortless Management at Your Fingertips -
+    </h3>
   </div>
 
-  <div class="card-container">
-    <img src="assets/images/curcuit.png" alt="" />
+  <div class="section__cards-container">
+    <img
+      class="section__cards-container--image"
+      src="assets/images/curcuit.png"
+      alt="Curcuit"
+    />
     <div
       class="card"
       #cardElement
       [@slideInOut]="animationStates[0] ? animationStates[0] : 'right'"
     >
-      <img class="xd" src="assets/images/dashboard.png" alt="" srcset="" />
+      <img
+        class="card__screen"
+        src="assets/images/dashboard.png"
+        alt="ManagePro screenshot"
+      />
     </div>
   </div>
-  <div class="card-container">
+  <div class="section__cards-container">
     <div
       class="card"
       #cardElement
       [@slideInOut]="animationStates[1] ? animationStates[1] : 'left'"
     >
-      <img class="xd" src="assets/images/dashboard.png" alt="" srcset="" />
+      <img
+        class="card__screen"
+        src="assets/images/dashboard.png"
+        alt="ManagePro screenshot"
+      />
     </div>
-    <img src="assets/images/curcuit.png" alt="" />
+    <img
+      class="section__cards-container--image"
+      src="assets/images/curcuit.png"
+      alt="Curcuit"
+    />
   </div>
-  <div class="card-container">
-    <img src="assets/images/curcuit.png" alt="" />
+  <div class="section__cards-container">
+    <img
+      class="section__cards-container--image"
+      src="assets/images/curcuit.png"
+      alt="Curcuit"
+    />
     <div
       class="card"
       #cardElement
       [@slideInOut]="animationStates[2] ? animationStates[2] : 'right'"
     >
-      <img class="xd" src="assets/images/dashboard.png" alt="" srcset="" />
+      <img
+        class="card__screen"
+        src="assets/images/dashboard.png"
+        alt="ManagePro screenshot"
+      />
     </div>
   </div>
-  <div class="card-container">
+  <div class="section__cards-container">
     <div
       class="card"
       #cardElement
       [@slideInOut]="animationStates[3] ? animationStates[3] : 'left'"
     >
-      <img class="xd" src="assets/images/dashboard.png" alt="" srcset="" />
+      <img
+        class="card__screen"
+        src="assets/images/dashboard.png"
+        alt="ManagePro screenshot"
+      />
     </div>
-    <img src="assets/images/curcuit.png" alt="" />
+    <img
+      class="section__cards-container--image"
+      src="assets/images/curcuit.png"
+      alt="Curcuit"
+    />
   </div>
-  <div class="card-container">
-    <img src="assets/images/curcuit.png" alt="" />
+  <div class="section__cards-container">
+    <img
+      class="section__cards-container--image"
+      src="assets/images/curcuit.png"
+      alt="Curcuit"
+    />
     <div
       class="card"
       #cardElement
       [@slideInOut]="animationStates[4] ? animationStates[4] : 'right'"
     >
-      <img class="xd" src="assets/images/dashboard.png" alt="" srcset="" />
+      <img
+        class="card__screen"
+        src="assets/images/dashboard.png"
+        alt="ManagePro screenshot"
+      />
     </div>
   </div>
 </section>
