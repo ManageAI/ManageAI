@@ -1,0 +1,10 @@
+@import '../../../../../shared/assets/scss/styles.scss';
+
+.footer {
+  border-top: 1px solid black;
+  background-color: $color-secondary;
+  color: $color-primary;
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+}
