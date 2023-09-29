@@ -10,6 +10,7 @@ import { ProductComponent } from './components/product/product.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CapitalizeFirstLetterPipe } from './pipes/capitalize-first-letter.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ProductComponent,
     ContactComponent,
     FooterComponent,
+    CapitalizeFirstLetterPipe,
   ],
   imports: [
     BrowserModule,
