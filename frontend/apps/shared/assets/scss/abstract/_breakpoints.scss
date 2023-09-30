@@ -3,19 +3,25 @@ $desktop: 992px;
 $tablet: 768px;
 
 @mixin large-desktop {
-  @media (min-width: $large-desktop) {
+  @media (min-width: calc($large-desktop + 1px)) {
     @content;
   }
 }
 
-@mixin desktop {
-  @media (min-width: $desktop) {
+@mixin desktop-and-down {
+  @media (max-width: $large-desktop) {
     @content;
   }
 }
 
-@mixin tablet {
-  @media (min-width: $tablet) {
+@mixin tablet-and-down {
+  @media (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin phone-and-down {
+  @media (max-width: $tablet) {
     @content;
   }
 }
