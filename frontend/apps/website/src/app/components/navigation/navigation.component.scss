@@ -85,7 +85,7 @@
   }
 }
 
-@include tablet-and-down {
+@include for-desktop-or-smaller {
   .navbar-hamburger {
     display: block;
   }
@@ -112,6 +112,18 @@
       &--open {
         transform: translateY(0%);
       }
+    }
+  }
+}
+
+@include for-small-phone-or-smaller {
+  .nav {
+    &__logo {
+      font-size: 1rem;
+    }
+
+    &__item {
+      margin: 15px;
     }
   }
 }

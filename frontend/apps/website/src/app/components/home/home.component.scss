@@ -108,3 +108,93 @@
     width: 80%;
   }
 }
+
+@include for-larger-desktop-or-smaller {
+  .header {
+    &__image {
+      display: none;
+    }
+  }
+}
+
+@include for-tablet-or-smaller {
+  .header {
+    &__content {
+      margin: 10px;
+    }
+
+    &__title {
+      font-size: 4.3rem;
+    }
+
+    &__subtitle {
+      font-size: 1.8rem;
+    }
+
+    &__descritpion {
+      font-size: 1.6rem;
+    }
+
+    &__button {
+      white-space: nowrap;
+    }
+  }
+}
+
+@include for-phone-or-smaller {
+  .header {
+    &__content {
+      margin: 0;
+    }
+
+    &__title {
+      font-size: 3.3rem;
+    }
+
+    &__subtitle {
+      font-size: 1.3rem;
+      margin: 0;
+    }
+
+    &__description {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@include for-small-phone-or-smaller {
+  .header {
+    &__content {
+      padding: 20px;
+    }
+    &__title {
+      font-size: 2.8rem;
+    }
+
+    &__subtitle {
+      font-size: 1rem;
+    }
+
+    &__description {
+      font-size: 0.9rem;
+    }
+
+    &__button {
+      margin: 30px;
+      font-size: 1.2rem;
+      padding: 15px 65px;
+    }
+
+    &__find {
+      margin-top: 30px;
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+
+    &__icon {
+      width: 80%;
+    }
+  }
+}
