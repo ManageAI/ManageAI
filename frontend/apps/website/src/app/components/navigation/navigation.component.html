@@ -8,16 +8,35 @@
     ManagePro
   </a>
   <ul class="nav__list">
-    <li class="nav__item" *ngFor="let link of links">
-      <a
-        class="nav__link"
-        [ngClass]="{ 'nav__link--active': isSelect === link }"
-        (click)="onLinkClick(link)"
-        >{{ link | capitalizeFirstLetter }}</a
-      >
-    </li>
-    <li class="nav__item">
-      <a class="nav__link nav__link--login" href="">Sign In</a>
-    </li>
+    <div
+      class="nav__items-container"
+      [ngClass]="{ 'nav__items-container--open': isNavbarOpen }"
+    >
+      <li class="nav__item" *ngFor="let link of links">
+        <a
+          class="nav__link"
+          [ngClass]="{ 'nav__link--active': isSelect === link }"
+          (click)="onLinkClick(link)"
+          >{{ link | capitalizeFirstLetter }}</a
+        >
+      </li>
+      <li class="nav__item">
+        <a class="nav__link nav__link--login" href="">Sign In</a>
+      </li>
+    </div>
+    <div class="navbar-hamburger" (click)="openNavbar()">
+      <div
+        class="navbar-hamburger__line"
+        [ngClass]="{ 'navbar-hamburger__line--open': isNavbarOpen }"
+      ></div>
+      <div
+        class="navbar-hamburger__line"
+        [ngClass]="{ 'navbar-hamburger__line--open': isNavbarOpen }"
+      ></div>
+      <div
+        class="navbar-hamburger__line"
+        [ngClass]="{ 'navbar-hamburger__line--open': isNavbarOpen }"
+      ></div>
+    </div>
   </ul>
 </nav>
