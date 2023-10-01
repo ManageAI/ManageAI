@@ -30,7 +30,8 @@ import {
 })
 export class ProductComponent {
   @ViewChildren('cardElement') cards!: QueryList<ElementRef>;
-  public animationStates: { [key: number]: string } = {};
+
+  animationStates: { [key: number]: string } = {};
 
   @HostListener('window:scroll', ['$event'])
   onScroll(): void {
