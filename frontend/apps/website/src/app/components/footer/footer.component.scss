@@ -1,10 +1,16 @@
 @import '../../../../../shared/assets/scss/styles.scss';
 
 .footer {
-  border-top: 1px solid black;
+  border-top: 1px solid $color-primary;
   background-color: $color-secondary;
   color: $color-primary;
   text-align: center;
   padding: 20px;
-  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+@include for-small-phone-or-smaller {
+  .footer {
+    font-size: 1rem;
+  }
 }
