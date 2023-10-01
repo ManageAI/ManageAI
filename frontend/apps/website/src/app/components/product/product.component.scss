@@ -5,35 +5,59 @@
   min-height: 100vh;
   overflow: hidden;
 
-  &__cards-container {
+  &__cards {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
-
-    &--image {
-      width: 40%;
-      height: 45vh;
-    }
-
-    &--image:nth-child(even) {
-      rotate: 180deg;
-    }
+    margin-left: 200px;
+    margin-right: 200px;
+    align-items: stretch;
 
     .card {
-      margin: 50px 225px;
-      width: 600px;
-      height: 400px;
-      border-radius: 20px;
-      box-shadow: 0px 0px 25px $color-box-shadow;
-      background-color: $color-secondary;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 20px 0;
 
       &__screen {
         border-radius: 20px;
-        width: 600px;
-        height: 400px;
+        width: 450px;
+        height: 300px;
       }
     }
+
+    .cards__line {
+      margin: 5px 100px;
+      width: 12px;
+      border-radius: 10px;
+      background: linear-gradient(
+        to bottom,
+        $color-tertiary,
+        $color-primary,
+        $color-tertiary
+      );
+    }
+
+    .cards__description {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      h4 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  &__cards:last-child {
+    margin-bottom: 30px;
   }
 
   &__video-container {
@@ -53,6 +77,7 @@
 
   &__product-wrapper {
     text-align: center;
+    margin-bottom: 30px;
 
     &--title {
       font-size: 4rem;
@@ -64,5 +89,31 @@
       color: $color-subtitle;
       font-size: 1.5rem;
     }
+  }
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.icon-box {
+  display: flex;
+  position: relative;
+
+  &__image {
+    z-index: 1;
+  }
+
+  &__blur {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translate(-25%, -25%);
+    width: 80%;
+    height: 80%;
+    background-color: $color-tertiary;
+    filter: blur(20px);
   }
 }
