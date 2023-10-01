@@ -3,12 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { AuthorizedUserRoutingModule } from './authorized-user-routing.module';
 
+import { AuthorizedUserComponent } from './authorized-user.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    AuthorizedUserRoutingModule
-  ]
+  declarations: [AuthorizedUserComponent],
+  imports: [CommonModule, AuthorizedUserRoutingModule],
 })
-export class AuthorizedUserModule { }
+export class AuthorizedUserModule {}
