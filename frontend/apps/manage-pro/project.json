@@ -17,9 +17,21 @@
         "tsConfig": "apps/manage-pro/tsconfig.app.json",
         "assets": [
           "apps/manage-pro/src/favicon.ico",
-          "apps/manage-pro/src/assets"
+          {
+            "glob": "**/*",
+            "input": "apps/manage-pro/src/assets",
+            "output": "assets"
+          },
+          {
+            "glob": "**/*",
+            "input": "apps/shared/assets",
+            "output": "shared/assets/"
+          }
         ],
-        "styles": ["apps/manage-pro/src/styles.scss"],
+        "styles": [
+          "apps/manage-pro/src/styles.scss",
+          "apps/shared/assets/scss/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
