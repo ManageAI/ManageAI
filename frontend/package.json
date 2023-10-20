@@ -2,7 +2,10 @@
   "name": "@frontend/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "website:dev:docker": "nx serve apps/website --host=0.0.0.0",
+    "manage-pro:dev:docker": "nx serve apps/manage-pro --host=0.0.0.0"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~16.2.0",
