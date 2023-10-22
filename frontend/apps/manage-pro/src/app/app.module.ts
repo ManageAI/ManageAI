@@ -7,11 +7,7 @@ import { SharedModule } from './shared.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    SharedModule,
-    RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
-  ],
+  imports: [BrowserModule, SharedModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],
 })
