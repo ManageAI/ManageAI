@@ -8,7 +8,7 @@
     <div class="login-box">
       <h1 class="login-box__title">Login to</h1>
       <span class="login-box__subtitle">- ManagePro -</span>
-      <form class="form">
+      <form [formGroup]="loginForm" class="form">
         <input
           class="form__input"
           type="login"
@@ -23,7 +23,7 @@
         />
       </form>
       <div class="example-button-row">
-        <button type="submit" class="button">Sign in</button>
+        <button type="submit" class="button" (click)="signIn()">Sign in</button>
       </div>
     </div>
   </div>
