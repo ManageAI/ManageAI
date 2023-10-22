@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'frontend-authorized-user',
+  selector: 'app-authorized-user',
   templateUrl: './authorized-user.component.html',
   styleUrls: ['./authorized-user.component.scss'],
 })
