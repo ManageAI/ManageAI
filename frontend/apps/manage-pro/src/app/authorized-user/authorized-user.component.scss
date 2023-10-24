@@ -17,21 +17,43 @@ video {
   z-index: -1;
 }
 
+.login-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .shadow {
   position: absolute;
   top: 0;
   left: 0;
   min-height: 100vh;
   width: 60%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: -1;
 }
 
 .login {
+  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: rgb(230, 230, 230);
+  border-bottom: 1px solid black;
+}
+
+.or-info {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55px;
+  height: 55px;
+  border-radius: 50px;
+  background: linear-gradient(to right, $color-primary, $color-tertiary);
+  color: white;
+  z-index: 1;
 }
 
 .login-box {
@@ -39,10 +61,8 @@ video {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 50px;
-  padding: 50px 90px;
-  background-color: $color-secondary;
-  box-shadow: 0px 0px 25px $color-box-shadow;
+  margin: 10px 50px;
+  padding: 50px 75px;
   border-radius: 20px;
 
   &__title {
@@ -50,10 +70,11 @@ video {
   }
 
   &__subtitle {
-    font-size: 3rem;
+    font-size: 4rem;
     color: $color-tertiary;
     margin-bottom: 40px;
     font-weight: 600;
+    white-space: nowrap;
   }
 }
 
@@ -65,7 +86,7 @@ video {
 
   &__input {
     margin: 15px;
-    width: 80%;
+    width: 90%;
     padding: 20px;
     background-color: $form-element-bg-color;
     border: none;
@@ -74,14 +95,100 @@ video {
   }
 }
 
-.example-button-row {
-  display: table-cell;
-  max-width: 600px;
+.video-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.animation {
+  display: flex;
+  align-items: center;
+}
+
+.anim-title {
+  margin-left: 75px;
+  font-size: 4.5rem;
+  color: $color-secondary;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(70, end);
+}
+
+.ball {
+  margin-left: 15px;
+  width: 20px;
+  height: 20px;
+  background-color: $color-tertiary;
+  border-radius: 50%;
+  animation: move-ball 5s steps(100, end), blink-caret 1s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes move-ball {
+  from {
+    padding-left: 20px;
+    right: 0;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: $color-tertiary;
+  }
+}
+
+.highlight {
+  color: $color-tertiary;
 }
 
 .button {
-  margin-top: 30px;
   @include button;
-  padding: 10px 35px;
-  font-size: 1.2rem;
+  margin: 20px 0;
+  padding: 10px 50px;
+  font-size: 1.3rem;
+}
+
+.logins-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.logins {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  &__login {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    margin: 10px 0;
+    width: 17vw;
+    height: 55px;
+    border-radius: 30px;
+    border: 1px solid #333;
+  }
+
+  p {
+    margin-left: 25px;
+  }
 }

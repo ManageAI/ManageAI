@@ -1,29 +1,59 @@
 <div class="wrapper">
-  <div class="video-wrapper">
+  <div class="video-container">
+    <div class="animation">
+      <p
+        [@textAnimation]="state"
+        class="anim-title"
+        [innerHTML]="currentText"
+      ></p>
+      <span class="ball"></span>
+    </div>
     <video class="" playsInline autoplay loop>
       <source src="assets/videos/team.mp4" type="video/mp4" />
     </video>
   </div>
-  <div class="login">
-    <div class="login-box">
-      <h1 class="login-box__title">Login to</h1>
-      <span class="login-box__subtitle">- ManagePro -</span>
-      <form [formGroup]="loginForm" class="form">
-        <input
-          class="form__input"
-          type="login"
-          formControlName="login"
-          placeholder="Ex. pat@example.com"
-        />
-        <input
-          class="form__input"
-          formControlName="password"
-          placeholder="Password"
-          type="password"
-        />
-      </form>
-      <div class="example-button-row">
-        <button type="submit" class="button" (click)="signIn()">Sign in</button>
+  <div class="login-container">
+    <div class="login">
+      <div class="login-box">
+        <h1 class="login-box__title">Login to</h1>
+        <span class="login-box__subtitle">ManagePro</span>
+        <form [formGroup]="loginForm" class="form">
+          <input
+            class="form__input"
+            type="login"
+            formControlName="login"
+            placeholder="Ex. pat@example.com"
+          />
+          <input
+            class="form__input"
+            formControlName="password"
+            placeholder="Password"
+            type="password"
+          />
+        </form>
+        <div>
+          <button type="submit" class="button" (click)="signIn()">
+            Sign in
+          </button>
+        </div>
+      </div>
+      <div class="or-info">OR</div>
+    </div>
+
+    <div class="logins-wrapper">
+      <div class="logins">
+        <div class="logins__login">
+          <img src="assets\icons\google-auth.svg" alt="Google Logo" />
+          <p>Continue with Google</p>
+        </div>
+        <div class="logins__login">
+          <img src="assets\icons\facebook-auth.svg" alt="Facebook Logo" />
+          <p>Continue with Facebook</p>
+        </div>
+        <div class="logins__login">
+          <img src="assets\icons\twitterx-auth.svg" alt="Twitter Logo" />
+          <p>Continue with TwitterX</p>
+        </div>
       </div>
     </div>
   </div>
