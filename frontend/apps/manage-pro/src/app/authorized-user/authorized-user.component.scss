@@ -7,6 +7,22 @@
   overflow: hidden;
 }
 
+.policy-info {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+
+  a,
+  span {
+    color: $color-aside;
+    font-size: 0.7rem;
+  }
+
+  span {
+    padding: 0 10px;
+  }
+}
+
 .advert-container {
   display: flex;
   justify-content: left;
