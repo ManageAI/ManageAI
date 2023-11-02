@@ -26,6 +26,11 @@
             "glob": "**/*",
             "input": "apps/shared/assets",
             "output": "shared/assets/"
+          },
+          {
+            "glob": "**/*",
+            "input": "libs/shared-components/src/assets",
+            "output": "lib/assets"
           }
         ],
         "styles": [

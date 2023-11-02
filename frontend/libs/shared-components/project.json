@@ -41,7 +41,7 @@
           {
             "glob": "**/*",
             "input": "libs/shared-components/src/assets",
-            "output": "assets/"
+            "output": "lib/assets"
           }
         ]
       },
