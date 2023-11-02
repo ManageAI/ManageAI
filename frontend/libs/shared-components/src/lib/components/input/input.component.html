@@ -11,6 +11,8 @@
         [id]="id"
         [type]="type"
         [placeholder]="placeholder"
+        [readonly]="isReadOnly"
+        (input)="setInput($event.target)"
       />
     </div>
   </div>
