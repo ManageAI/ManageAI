@@ -5,7 +5,11 @@ import {
   Output,
   forwardRef,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  ControlValueAccessor,
+  FormControl,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 @Component({
   selector: 'shared-input',
@@ -26,6 +30,8 @@ export class InputComponent implements ControlValueAccessor {
   @Input() placeholder!: string;
   @Input() iconSrc!: string;
   @Input() isReadOnly!: boolean;
+  @Input() parentForm: any;
+  @Input() fieldName!: string;
 
   @Output() valueChange = new EventEmitter<string>();
 
@@ -36,6 +42,18 @@ export class InputComponent implements ControlValueAccessor {
   value!: unknown;
 
   // NG_VALUE_ACCESSOR interface methods
+
+  get formField(): FormControl {
+    return this.parentForm?.get(this.fieldName) as FormControl;
+  }
+
+  get hasValidator(): boolean {
+    if (this.formField && this.formField.validator) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   writeValue<T>(value: T): void {
     if (!value) {
