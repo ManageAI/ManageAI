@@ -1,12 +1,17 @@
 <div class="input-field">
-  <label class="input-field__cover" for="input"></label>
+  <label class="input-field__cover" [htmlFor]="id"></label>
   <div class="input-field__icon">
-    <img width="20" height="20" src="assets/mock-icon.svg" alt="" />
+    <img width="20" height="20" [src]="iconSrc" alt="icon" />
   </div>
   <div class="input-field__container">
-    <div class="input-field__label">Password</div>
+    <div class="input-field__label">{{ label }}</div>
     <div class="input-field__box">
-      <input id="input" placeholder="Enter something" />
+      <input
+        class="input-field__text"
+        [id]="id"
+        [type]="type"
+        [placeholder]="placeholder"
+      />
     </div>
   </div>
 </div>
