@@ -1,0 +1,10 @@
+<div class="validator">
+  <ng-container
+    *ngIf="hasValidator && formField?.touched && formField?.invalid"
+  >
+    <img width="20" height="20" src="lib/assets/error.svg" alt="Error Icon" />
+  </ng-container>
+  <ng-container *ngIf="hasValidator && formField?.touched && formField?.valid">
+    <img width="25" height="25" src="lib/assets/pass.svg" alt="Complete Icon" />
+  </ng-container>
+</div>
