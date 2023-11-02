@@ -36,7 +36,14 @@
         "port": 4400,
         "configDir": "libs/shared-components/.storybook",
         "browserTarget": "shared-components:build-storybook",
-        "compodoc": false
+        "compodoc": false,
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "libs/shared-components/src/assets",
+            "output": "assets/"
+          }
+        ]
       },
       "configurations": {
         "ci": {
