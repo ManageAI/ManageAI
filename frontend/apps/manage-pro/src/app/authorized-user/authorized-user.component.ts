@@ -34,7 +34,7 @@ import {
 })
 export class AuthorizedUserComponent {
   loginForm = this._formBuilder.nonNullable.group({
-    login: ['', [Validators.required, Validators.email]],
+    email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
   });
 
@@ -47,6 +47,9 @@ export class AuthorizedUserComponent {
   currentText = '';
   state = 'hidden';
   currentIndex = 0;
+
+  iconEmail = 'assets/icons/email.svg';
+  iconPassword = 'assets/icons/password.svg';
 
   constructor(
     private _formBuilder: FormBuilder,

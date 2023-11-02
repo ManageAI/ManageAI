@@ -17,18 +17,24 @@
       <h1 class="login-box__title">Login to</h1>
       <span class="login-box__subtitle">ManagePro</span>
       <form [formGroup]="loginForm" class="login-box__form">
-        <input
+        <shared-input
           class="form__input"
-          type="login"
-          formControlName="login"
-          placeholder="Ex. pat@example.com"
-        />
-        <input
+          formControlName="email"
+          [id]="'email'"
+          [iconSrc]="iconEmail"
+          [label]="'Email'"
+          [type]="'email'"
+          [placeholder]="'example@email.com'"
+        ></shared-input>
+        <shared-input
           class="form__input"
           formControlName="password"
-          placeholder="Password"
-          type="password"
-        />
+          [id]="'password'"
+          [iconSrc]="iconPassword"
+          [label]="'Password'"
+          [type]="'password'"
+          [placeholder]="'Enter a secure password'"
+        ></shared-input>
       </form>
       <button type="submit" class="login-box__submit-btn" (click)="signIn()">
         Sign in
