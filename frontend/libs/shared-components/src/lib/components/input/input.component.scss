@@ -5,18 +5,45 @@
   min-width: 100%;
   position: relative;
   height: 55px;
+  overflow: hidden;
 
   &:focus-within {
     background-color: #eeeeee;
-    border-bottom: 1px solid green;
   }
 
-  &--error {
-    border-bottom: 1px solid red;
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: green;
+    transition: width 0.2s;
   }
 
-  &--error:focus-within {
-    border-bottom: 1px solid red;
+  &::before {
+    left: 50%;
+  }
+
+  &::after {
+    right: 50%;
+  }
+
+  &:focus-within::before {
+    left: 0;
+    width: 50%;
+  }
+
+  &:focus-within::after {
+    right: 0;
+    width: 50%;
+  }
+
+  &--error::before,
+  &--error::after {
+    background-color: red;
   }
 
   &__cover {
