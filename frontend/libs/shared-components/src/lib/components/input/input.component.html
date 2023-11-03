@@ -2,7 +2,7 @@
   class="input-field"
   [ngClass]="
     hasValidator && formField.touched && formField.invalid
-      ? 'input-field--active'
+      ? 'input-field--error'
       : 'input-field'
   "
 >
@@ -14,7 +14,7 @@
     <div
       [ngClass]="
         hasValidator && formField.touched && formField.invalid
-          ? 'input-field__label--active'
+          ? 'input-field__label--error'
           : 'input-field__label'
       "
     >
@@ -34,9 +34,8 @@
   </div>
   <shared-validation-sign [formField]="formField"></shared-validation-sign>
 </div>
-<div
-  *ngIf="hasValidator && formField.touched && formField.invalid"
-  class="error-message"
->
-  Field {{ fieldName }} is required
+<div class="error-message">
+  <p *ngIf="hasValidator && formField.touched && formField.invalid">
+    Field {{ fieldName }} is required
+  </p>
 </div>

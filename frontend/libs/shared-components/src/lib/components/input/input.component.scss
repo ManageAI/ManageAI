@@ -11,11 +11,11 @@
     border-bottom: 1px solid green;
   }
 
-  &--active {
+  &--error {
     border-bottom: 1px solid red;
   }
 
-  &--active:focus-within {
+  &--error:focus-within {
     border-bottom: 1px solid red;
   }
 
@@ -48,7 +48,8 @@
     color: #02b863;
     transition: font-size 0.1s ease;
 
-    &--active {
+    &--error {
+      padding-top: 5px;
       font-size: 14px;
       color: red;
     }
@@ -57,7 +58,7 @@
   &__box {
     display: flex;
 
-    &--active {
+    &--error {
       color: red;
     }
   }
@@ -80,4 +81,5 @@
   padding: 5px 10px;
   color: red;
   font-size: 14px;
+  height: 26px;
 }
