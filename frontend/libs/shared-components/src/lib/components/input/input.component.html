@@ -36,6 +36,7 @@
 </div>
 <div class="error-message">
   <p *ngIf="hasValidator && formField.touched && formField.invalid">
-    Field {{ fieldName }} is required
+    Field {{ fieldName }}
+    {{ value ? 'is invalid' : 'is required' }}
   </p>
 </div>

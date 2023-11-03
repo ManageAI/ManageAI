@@ -8,6 +8,7 @@ import {
 import {
   ControlValueAccessor,
   FormControl,
+  FormGroup,
   NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 
@@ -30,7 +31,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input() placeholder!: string;
   @Input() iconSrc!: string;
   @Input() isReadOnly!: boolean;
-  @Input() parentForm: any;
+  @Input() parentForm!: FormGroup<any>;
   @Input() fieldName!: string;
 
   @Output() valueChange = new EventEmitter<string>();
