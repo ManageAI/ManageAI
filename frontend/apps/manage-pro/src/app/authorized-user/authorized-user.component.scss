@@ -98,6 +98,22 @@
 
 .manual-login {
   position: relative;
+
+  &__or-info {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -4.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    background: linear-gradient(to right, $color-primary, $color-tertiary);
+    color: white;
+    z-index: 1;
+  }
 }
 
 .login-box {
@@ -132,22 +148,6 @@
     margin: 15px 0;
     padding: 10px 50px;
     font-size: 1.3rem;
-  }
-
-  &__or-info {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: -5%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 55px;
-    height: 55px;
-    border-radius: 50px;
-    background: linear-gradient(to right, $color-primary, $color-tertiary);
-    color: white;
-    z-index: 1;
   }
 }
 
