@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthorizationService } from '../../core/services/authorization.service';
 import {
@@ -8,6 +8,7 @@ import {
   transition,
   animate,
 } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-authorized-user',
@@ -32,7 +33,7 @@ import {
     ]),
   ],
 })
-export class AuthorizedUserComponent {
+export class AuthorizedUserComponent implements OnInit {
   loginForm = this._formBuilder.nonNullable.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
@@ -51,9 +52,12 @@ export class AuthorizedUserComponent {
   iconEmail = 'assets/icons/email.svg';
   iconPassword = 'assets/icons/password.svg';
 
+  isLoginPath!: boolean;
+
   constructor(
     private _formBuilder: FormBuilder,
-    private _authService: AuthorizationService
+    private _authService: AuthorizationService,
+    private _router: Router
   ) {
     this.changeText();
     setInterval(() => {
@@ -62,6 +66,10 @@ export class AuthorizedUserComponent {
         this.changeText();
       }, 4000);
     }, 8000);
+  }
+
+  public ngOnInit(): void {
+    this.isLoginPath = this._router.url === '/login';
   }
 
   public changeText(): void {

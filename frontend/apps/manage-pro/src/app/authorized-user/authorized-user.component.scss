@@ -96,15 +96,17 @@
   flex-direction: column;
 }
 
-.login-box {
+.manual-login {
   position: relative;
+}
+
+.login-box {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin: 15px 0;
-  padding: 60px 75px;
-  border-bottom: 1px solid black;
+  padding: 40px 75px;
 
   &__title {
     font-size: 3.5rem;
@@ -127,7 +129,7 @@
 
   &__submit-btn {
     @include button;
-    margin: 20px 0;
+    margin: 15px 0;
     padding: 10px 50px;
     font-size: 1.3rem;
   }
@@ -151,7 +153,7 @@
 
 .form {
   &__input {
-    margin: 10px;
+    margin: 5px;
     width: 85%;
     border: none;
     border-radius: 20px;
@@ -192,4 +194,17 @@
   width: 60%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: -1;
+}
+
+.register {
+  margin-top: 20px;
+
+  &__text {
+    font-size: 0.9rem;
+  }
+
+  &__link {
+    color: $color-tertiary;
+    font-size: 0.9rem;
+  }
 }
