@@ -1,0 +1,58 @@
+<h1 class="login-box__title">SignUp to</h1>
+<span class="login-box__subtitle">ManagePro</span>
+
+<form [formGroup]="signUpForm" class="login-box__form">
+  <shared-input
+    class="form__input"
+    formControlName="fullName"
+    [id]="'fullName'"
+    [iconSrc]="iconUser"
+    [label]="'Full Name'"
+    [type]="'text'"
+    [placeholder]="'John Doe'"
+    [parentForm]="signUpForm"
+    [fieldName]="'fullName'"
+  ></shared-input>
+  <shared-input
+    class="form__input"
+    formControlName="email"
+    [id]="'email'"
+    [iconSrc]="iconEmail"
+    [label]="'Email'"
+    [type]="'email'"
+    [placeholder]="'example@email.com'"
+    [parentForm]="signUpForm"
+    [fieldName]="'email'"
+  ></shared-input>
+  <shared-input
+    class="form__input"
+    formControlName="password"
+    [id]="'password'"
+    [iconSrc]="iconPassword"
+    [label]="'Password'"
+    [type]="'password'"
+    [placeholder]="'Enter a secure password'"
+    [parentForm]="signUpForm"
+    [fieldName]="'password'"
+  ></shared-input>
+  <shared-input
+    class="form__input"
+    formControlName="confirmPassword"
+    [id]="'confirmPassword'"
+    [iconSrc]="iconLoop"
+    [label]="'Confirm Password'"
+    [type]="'password'"
+    [placeholder]="'Confirm your password'"
+    [parentForm]="signUpForm"
+    [fieldName]="'confirmPassword'"
+  ></shared-input>
+</form>
+
+<button type="submit" class="login-box__submit-btn">Sign Up</button>
+
+<div class="register">
+  <p class="register__text">
+    Already have an account ?
+    <a class="register__link" [routerLink]="'/login'">Sign In</a>
+  </p>
+</div>

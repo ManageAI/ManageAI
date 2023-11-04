@@ -13,40 +13,17 @@
     </video>
   </div>
   <div class="auth-container">
-    <div class="login-box">
-      <h1 class="login-box__title">Login to</h1>
-      <span class="login-box__subtitle">ManagePro</span>
-      <form [formGroup]="loginForm" class="login-box__form">
-        <shared-input
-          class="form__input"
-          formControlName="email"
-          [id]="'email'"
-          [iconSrc]="iconEmail"
-          [label]="'Email'"
-          [type]="'email'"
-          [placeholder]="'example@email.com'"
-          [parentForm]="loginForm"
-          [fieldName]="'email'"
-        ></shared-input>
-        <shared-input
-          class="form__input"
-          formControlName="password"
-          [id]="'password'"
-          [iconSrc]="iconPassword"
-          [label]="'Password'"
-          [type]="'password'"
-          [placeholder]="'Enter a secure password'"
-          [parentForm]="loginForm"
-          [fieldName]="'password'"
-        ></shared-input>
-      </form>
-      <button type="submit" class="login-box__submit-btn" (click)="signIn()">
-        Sign in
-      </button>
-      <div class="login-box__or-info">OR</div>
+    <div
+      class="manual-login"
+      [ngStyle]="isLoginPath ? { 'border-bottom': '1px solid black' } : {}"
+    >
+      <app-login *ngIf="isLoginPath" class="login-box" />
+      <app-signup *ngIf="!isLoginPath" class="login-box" />
+
+      <div *ngIf="isLoginPath" class="login-box__or-info">OR</div>
     </div>
 
-    <div class="social-logins-box">
+    <div *ngIf="isLoginPath" class="social-logins-box">
       <div class="social-logins-box__login">
         <img src="assets\icons\google-auth.svg" alt="Google Logo" />
         <p>Continue with Google</p>
