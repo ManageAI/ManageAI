@@ -12,4 +12,13 @@ export const appRoutes: Route[] = [
         (m) => m.AuthorizedUserModule
       ),
   },
+
+  {
+    path: 'signup',
+    component: AuthorizedUserComponent,
+    loadChildren: () =>
+      import('./authorized-user/authorized-user.module').then(
+        (m) => m.AuthorizedUserModule
+      ),
+  },
 ];
