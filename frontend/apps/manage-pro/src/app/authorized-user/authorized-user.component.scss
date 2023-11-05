@@ -42,52 +42,32 @@
 .animation {
   display: flex;
   align-items: center;
+  margin-left: 20px;
+  font-size: 4rem;
+  width: 100%;
+  color: $color-secondary;
 
-  &__title {
-    margin-left: 75px;
-    font-size: 4.5rem;
-    color: $color-secondary;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing 3s steps(70, end);
-  }
+  &__text {
+    display: block;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    pointer-events: none;
 
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-
-  &__ball {
-    margin-left: 15px;
-    width: 20px;
-    height: 20px;
-    background-color: $color-tertiary;
-    border-radius: 50%;
-    animation: move-ball 5s steps(100, end),
-      pull-size 1.25s ease-in-out infinite;
-  }
-
-  @keyframes move-ball {
-    from {
-      right: 0;
-    }
-    to {
-      right: 100%;
-    }
-  }
-
-  @keyframes pull-size {
-    from,
-    to {
-      transform: scale3d(1);
-    }
-    50% {
-      transform: scale3d(1.25, 1.25, 1);
-    }
+    @include typed(
+      'Manage on the highest level',
+      'Plan Better. Execute Faster.',
+      "Unlock Your Team's Potential",
+      (
+        type: 0.04,
+        pause-typed: 4,
+        delete: 0.04,
+      ),
+      (
+        caret-color: $color-tertiary,
+      )
+    );
   }
 }
 
@@ -228,11 +208,6 @@
   .login-box {
     padding: 40px 0;
   }
-
-  .animation__title {
-    margin-left: 15px;
-    font-size: 2.5rem;
-  }
 }
 
 @include for-tablet-or-smaller {
@@ -269,7 +244,7 @@
   }
 
   .login-box__subtitle {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   .social-logins-box p {
