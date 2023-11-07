@@ -1,25 +1,25 @@
 {
-  "name": "apps/manage-pro",
+  "name": "apps/manage-ai",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/manage-pro/src",
+  "sourceRoot": "apps/manage-ai/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/manage-pro",
-        "index": "apps/manage-pro/src/index.html",
-        "main": "apps/manage-pro/src/main.ts",
+        "outputPath": "dist/apps/manage-ai",
+        "index": "apps/manage-ai/src/index.html",
+        "main": "apps/manage-ai/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/manage-pro/tsconfig.app.json",
+        "tsConfig": "apps/manage-ai/tsconfig.app.json",
         "assets": [
-          "apps/manage-pro/src/favicon.ico",
+          "apps/manage-ai/src/favicon.ico",
           {
             "glob": "**/*",
-            "input": "apps/manage-pro/src/assets",
+            "input": "apps/manage-ai/src/assets",
             "output": "assets"
           },
           {
@@ -34,7 +34,7 @@
           }
         ],
         "styles": [
-          "apps/manage-pro/src/styles.scss",
+          "apps/manage-ai/src/styles.scss",
           "apps/shared/assets/scss/styles.scss"
         ],
         "scripts": []
@@ -70,10 +70,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "apps/manage-pro:build:production"
+          "browserTarget": "apps/manage-ai:build:production"
         },
         "development": {
-          "browserTarget": "apps/manage-pro:build:development"
+          "browserTarget": "apps/manage-ai:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "apps/manage-pro:build"
+        "browserTarget": "apps/manage-ai:build"
       }
     },
     "lint": {
@@ -89,8 +89,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "apps/manage-pro/**/*.ts",
-          "apps/manage-pro/**/*.html"
+          "apps/manage-ai/**/*.ts",
+          "apps/manage-ai/**/*.html"
         ]
       }
     },
@@ -98,7 +98,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/manage-pro/jest.config.ts",
+        "jestConfig": "apps/manage-ai/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
