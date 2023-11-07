@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthorizationService } from '../../core/services/authorization.service';
 import { Router } from '@angular/router';
@@ -7,6 +11,7 @@ import { Router } from '@angular/router';
   selector: 'app-authorized-user',
   templateUrl: './authorized-user.component.html',
   styleUrls: ['./authorized-user.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthorizedUserComponent implements OnInit {
   loginForm = this._formBuilder.nonNullable.group({
