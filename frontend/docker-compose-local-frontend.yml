@@ -11,11 +11,11 @@ services:
       - 4201:4201
 
   # Angular App-2
-  manage-pro:
+  manage-ai:
     extends:
       file: docker-compose.base.yml
       service: nx-app-base
-    command: npm run manage-pro:dev:docker
+    command: npm run manage-ai:dev:docker
     ports:
       - 4202:4202
 
