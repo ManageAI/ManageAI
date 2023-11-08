@@ -1,0 +1,36 @@
+<h1 class="login-box__title">Login to</h1>
+<span class="login-box__subtitle">ManageAI</span>
+
+<form [formGroup]="loginForm" class="login-box__form">
+  <shared-input
+    class="form__input"
+    formControlName="email"
+    [id]="'email'"
+    [iconSrc]="iconEmail"
+    [label]="'Email'"
+    [type]="'email'"
+    [placeholder]="'example@email.com'"
+    [parentForm]="loginForm"
+    [fieldName]="'email'"
+  ></shared-input>
+  <shared-input
+    class="form__input"
+    formControlName="password"
+    [id]="'password'"
+    [iconSrc]="iconPassword"
+    [label]="'Password'"
+    [type]="'password'"
+    [placeholder]="'Enter a secure password'"
+    [parentForm]="loginForm"
+    [fieldName]="'password'"
+  ></shared-input>
+</form>
+
+<button type="submit" class="login-box__submit-btn">Sign In</button>
+
+<div class="register">
+  <p class="register__text">
+    Don't have an account ?
+    <a class="register__link" [routerLink]="'/signup'">Sign Up</a>
+  </p>
+</div>

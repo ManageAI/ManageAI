@@ -6,9 +6,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AuthorizedUserComponent } from './authorized-user.component';
 import { SharedModule } from '../shared.module';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
-  declarations: [AuthorizedUserComponent],
+  declarations: [AuthorizedUserComponent, LoginComponent, SignupComponent],
   imports: [
     CommonModule,
     AuthorizedUserRoutingModule,
