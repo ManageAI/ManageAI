@@ -1,8 +1,10 @@
 package com.example.managepro.utils;
 
+import com.auth0.jwt.JWT;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -14,7 +16,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+
 @Component
+@RequiredArgsConstructor
 public class JwtTokenUtils {
 
     private final String SECRET = "qwertyfgfhgdjhgkjhkggfjhlkkgjhfgukmjkjhkjhlkiop";

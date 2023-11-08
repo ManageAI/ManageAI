@@ -1,4 +1,4 @@
-package com.example.managepro.controller.exceptions;
+package com.example.managepro.exceptions;
 
 import lombok.Data;
 
