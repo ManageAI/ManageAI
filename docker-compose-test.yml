@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+
+  mysql:
+    container_name: "manage-pro-my-sql-db"
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: manageprodb
+
+  manage-pro-backend:
+    restart: always
+    container_name: "manage-pro-backend"
+    build:
+      context: ./docker-mvnDebug
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "8000:8000"
+    working_dir: /backend/manage-pro-back-end
+    volumes:
+      - ./backend/:/backend/
