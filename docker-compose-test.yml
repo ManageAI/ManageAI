@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3'
 
 services:
   mysql:
@@ -22,13 +22,3 @@ services:
     working_dir: /backend/manage-pro-back-end
     volumes:
       - ./backend/:/backend/
-
-  nx-app-base:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    environment:
-      - DEV_PLATFORM=DOCKER
-    volumes:
-      - ./:/app
-      - mono-node-modules:/app/node_modules
