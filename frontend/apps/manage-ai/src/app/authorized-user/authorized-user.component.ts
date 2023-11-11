@@ -1,8 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthorizationService } from '../../core/services/authorization.service';
 import { Router } from '@angular/router';
@@ -34,10 +30,10 @@ export class AuthorizedUserComponent implements OnInit {
     this.isLoginPath = this._router.url === '/login';
   }
 
-  public signIn(): void {
-    if (this.loginForm.valid) {
+  public signIn(loginForm: any): void {    
+    if (loginForm.valid) {
       const login = {
-        ...this.loginForm.value,
+        ...loginForm.value,
       };
 
       this._authService.postAuthorizationLogin(login).subscribe((x) => {

@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -8,6 +13,8 @@ import { FormBuilder, Validators } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent {
+  @Output() signIn = new EventEmitter<any>();
+
   iconEmail = 'assets/icons/email.svg';
   iconPassword = 'assets/icons/password.svg';
 
@@ -17,4 +24,8 @@ export class LoginComponent {
   });
 
   constructor(private _formBuilder: FormBuilder) {}
+
+  signInUser(): void {
+    this.signIn.emit(this.loginForm);
+  }
 }
