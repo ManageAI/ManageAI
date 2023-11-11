@@ -4,7 +4,7 @@ services:
   # Angular App-1
   website:
     extends:
-      file: docker-compose.base.yml
+      file: docker-compose-test.yml
       service: nx-app-base
     command: npm run website:dev:docker
     ports:
@@ -13,7 +13,7 @@ services:
   # Angular App-2
   manage-ai:
     extends:
-      file: docker-compose.base.yml
+      file: docker-compose-test.yml
       service: nx-app-base
     command: npm run manage-ai:dev:docker
     ports:
