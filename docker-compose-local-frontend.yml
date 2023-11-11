@@ -4,20 +4,21 @@ services:
   # Angular App-1
   website:
     extends:
-      file: docker-compose-test.yml
+      file: ./docker-compose.base.yml
       service: nx-app-base
     command: npm run website:dev:docker
     ports:
-      - 4201:4201
+      - 4201:4200
 
   # Angular App-2
   manage-ai:
     extends:
-      file: docker-compose-test.yml
+      file: ./docker-compose.base.yml
       service: nx-app-base
     command: npm run manage-ai:dev:docker
     ports:
-      - 4202:4202
+      - 4202:4200
 
 volumes:
   mono-node-modules: null
+
