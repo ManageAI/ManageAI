@@ -26,6 +26,6 @@ export class LoginComponent {
   constructor(private _formBuilder: FormBuilder) {}
 
   signInUser(): void {
-    this.signIn.emit(this.loginForm);
+    this.signIn.emit(this.loginForm.value);
   }
 }

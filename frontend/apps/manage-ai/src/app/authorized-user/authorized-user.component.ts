@@ -30,13 +30,9 @@ export class AuthorizedUserComponent implements OnInit {
     this.isLoginPath = this._router.url === '/login';
   }
 
-  public signIn(loginForm: any): void {    
+  public signIn(loginForm: any): void {
     if (loginForm.valid) {
-      const login = {
-        ...loginForm.value,
-      };
-
-      this._authService.postAuthorizationLogin(login).subscribe((x) => {
+      this._authService.postAuthorizationLogin(loginForm).subscribe((x) => {
         console.log(x);
       });
     }
