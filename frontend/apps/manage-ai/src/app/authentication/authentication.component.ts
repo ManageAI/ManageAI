@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationService } from '../../core/services/authentication.service';
 import { Router } from '@angular/router';
 import { Authentication } from '../../core/interfaces/authentication.interface';
+import { Registration } from '../../core/interfaces/registration.interface';
 
 @Component({
   selector: 'app-authentication',
@@ -33,6 +34,12 @@ export class AuthenticationComponent implements OnInit {
 
   public signIn(loginForm: Partial<Authentication>): void {
     this._authService.authenticationLogin(loginForm).subscribe((x) => {
+      console.log(x);
+    });
+  }
+
+  public signUp(signUpForm: Partial<Registration>): void {
+    this._authService.registration(signUpForm).subscribe((x) => {
       console.log(x);
     });
   }

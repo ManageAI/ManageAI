@@ -1,5 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Registration } from 'apps/manage-ai/src/core/interfaces/registration.interface';
 
 @Component({
   selector: 'app-signup',
@@ -8,6 +14,8 @@ import { FormBuilder, Validators } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignupComponent {
+  @Output() signUp: EventEmitter<Partial<Registration>> = new EventEmitter();
+
   iconUser = 'assets/icons/user.svg';
   iconEmail = 'assets/icons/email.svg';
   iconPassword = 'assets/icons/password.svg';
@@ -21,4 +29,10 @@ export class SignupComponent {
   });
 
   constructor(private _formBuilder: FormBuilder) {}
+
+  public createAccount(): void {
+    if (this.signUpForm.invalid) return;
+
+    this.signUp.emit(this.signUpForm.value);
+  }
 }
