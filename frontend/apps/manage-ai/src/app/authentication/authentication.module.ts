@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { AuthenticationRoutingModule } from './authentication-routing.module';
+import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { authenticationRoutes } from './authentication.routes';
 
 import { AuthenticationComponent } from './authentication.component';
 import { SharedModule } from '../shared.module';
@@ -13,7 +14,7 @@ import { SignupComponent } from './signup/signup.component';
   declarations: [AuthenticationComponent, LoginComponent, SignupComponent],
   imports: [
     CommonModule,
-    AuthenticationRoutingModule,
+    RouterModule.forChild(authenticationRoutes),
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
