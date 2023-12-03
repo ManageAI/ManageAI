@@ -14,7 +14,7 @@ import { Registration } from 'apps/manage-ai/src/core/interfaces/registration.in
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignupComponent {
-  @Output() signUp: EventEmitter<Partial<Registration>> = new EventEmitter();
+  @Output() signUp: EventEmitter<Registration> = new EventEmitter();
 
   iconUser = 'assets/icons/user.svg';
   iconEmail = 'assets/icons/email.svg';
@@ -33,6 +33,12 @@ export class SignupComponent {
   public createAccount(): void {
     if (this.signUpForm.invalid) return;
 
-    this.signUp.emit(this.signUpForm.value);
+    const signUpForm: Registration = {
+      fullName: this.signUpForm.controls.fullName.value,
+      email: this.signUpForm.controls.email.value,
+      password: this.signUpForm.controls.password.value,
+    };
+
+    this.signUp.emit(signUpForm);
   }
 }

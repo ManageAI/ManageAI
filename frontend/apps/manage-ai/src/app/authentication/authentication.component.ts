@@ -38,7 +38,7 @@ export class AuthenticationComponent implements OnInit {
     });
   }
 
-  public signUp(signUpForm: Partial<Registration>): void {
+  public signUp(signUpForm: Registration): void {
     this._authService.registration(signUpForm).subscribe((x) => {
       console.log(x);
     });
