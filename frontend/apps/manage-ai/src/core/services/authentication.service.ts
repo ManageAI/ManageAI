@@ -17,7 +17,7 @@ export class AuthenticationService {
     return this._http.post(`${this._baseUrl}/login`, login);
   }
 
-  public registration(signUp: Partial<Registration>): Observable<any> {
-    return this._http.post(`${this._baseUrl}/signup`, signUp);
+  public registration(signUpForm: Registration): Observable<any> {
+    return this._http.post(`${this._baseUrl}/signup`, signUpForm);
   }
 }
