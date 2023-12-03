@@ -14,7 +14,7 @@ export class SignupComponent {
   iconLoop = 'assets/icons/loop.svg';
 
   signUpForm = this._formBuilder.nonNullable.group({
-    fullName: ['', [Validators.required, Validators.email]],
+    fullName: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
     confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
