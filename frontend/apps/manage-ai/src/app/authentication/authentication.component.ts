@@ -1,15 +1,15 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AuthorizationService } from '../../core/services/authorization.service';
+import { AuthenticationService } from '../../core/services/authentication.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-authorized-user',
-  templateUrl: './authorized-user.component.html',
-  styleUrls: ['./authorized-user.component.scss'],
+  selector: 'app-authentication',
+  templateUrl: './authentication.component.html',
+  styleUrls: ['./authentication.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthorizedUserComponent implements OnInit {
+export class AuthenticationComponent implements OnInit {
   loginForm = this._formBuilder.nonNullable.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
@@ -22,7 +22,7 @@ export class AuthorizedUserComponent implements OnInit {
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _authService: AuthorizationService,
+    private _authService: AuthenticationService,
     private _router: Router
   ) {}
 

@@ -1,24 +1,24 @@
 import { Route } from '@angular/router';
-import { AuthorizedUserComponent } from './authorized-user/authorized-user.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 export const appRoutes: Route[] = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 
   {
     path: 'login',
-    component: AuthorizedUserComponent,
+    component: AuthenticationComponent,
     loadChildren: () =>
-      import('./authorized-user/authorized-user.module').then(
-        (m) => m.AuthorizedUserModule
+      import('./authentication/authentication.module').then(
+        (m) => m.AuthenticationModule
       ),
   },
 
   {
     path: 'signup',
-    component: AuthorizedUserComponent,
+    component: AuthenticationComponent,
     loadChildren: () =>
-      import('./authorized-user/authorized-user.module').then(
-        (m) => m.AuthorizedUserModule
+      import('./authentication/authentication.module').then(
+        (m) => m.AuthenticationModule
       ),
   },
 ];
