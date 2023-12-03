@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationService } from '../../core/services/authentication.service';
 import { Router } from '@angular/router';
+import { Authentication } from '../../core/interfaces/authentication.interface';
 
 @Component({
   selector: 'app-authentication',
@@ -30,11 +31,9 @@ export class AuthenticationComponent implements OnInit {
     this.isLoginPath = this._router.url === '/login';
   }
 
-  public signIn(loginForm: any): void {
-    if (loginForm.valid) {
-      this._authService.postAuthorizationLogin(loginForm).subscribe((x) => {
-        console.log(x);
-      });
-    }
+  public signIn(loginForm: Partial<Authentication>): void {
+    this._authService.authenticationLogin(loginForm).subscribe((x) => {
+      console.log(x);
+    });
   }
 }

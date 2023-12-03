@@ -5,6 +5,7 @@ import {
   Output,
 } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Authentication } from 'apps/manage-ai/src/core/interfaces/authentication.interface';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent {
-  @Output() signIn = new EventEmitter<any>();
+  @Output() signIn = new EventEmitter<Partial<Authentication>>();
 
   iconEmail = 'assets/icons/email.svg';
   iconPassword = 'assets/icons/password.svg';
@@ -26,6 +27,8 @@ export class LoginComponent {
   constructor(private _formBuilder: FormBuilder) {}
 
   signInUser(): void {
+    if (this.loginForm.invalid) return;
+
     this.signIn.emit(this.loginForm.value);
   }
 }
