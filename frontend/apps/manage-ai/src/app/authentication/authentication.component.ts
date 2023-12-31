@@ -33,14 +33,16 @@ export class AuthenticationComponent implements OnInit {
   }
 
   public signIn(loginForm: Partial<Authentication>): void {
-    this._authService.authenticationLogin(loginForm).subscribe((x) => {
-      console.log(x);
-    });
+    this._router.navigate(['authorization']);
+    // this._authService.authenticationLogin(loginForm).subscribe((x) => {
+    //   console.log(x);
+    // });
   }
 
   public signUp(signUpForm: Registration): void {
     this._authService.registration(signUpForm).subscribe((x) => {
       console.log(x);
+      this._router.navigate(['']);
     });
   }
 }

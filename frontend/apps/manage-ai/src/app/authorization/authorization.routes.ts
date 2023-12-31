@@ -1,3 +1,3 @@
 import { Route } from '@angular/router';
 
-export const authenticationRoutes: Route[] = [];
+export const authorizationRoutes: Route[] = [];
