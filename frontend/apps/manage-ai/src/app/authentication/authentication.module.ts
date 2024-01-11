@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { AuthorizedUserRoutingModule } from './authorized-user-routing.module';
+import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AuthorizedUserComponent } from './authorized-user.component';
+import { authenticationRoutes } from './authentication.routes';
+
+import { AuthenticationComponent } from './authentication.component';
 import { SharedModule } from '../shared.module';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
-  declarations: [AuthorizedUserComponent, LoginComponent, SignupComponent],
+  declarations: [AuthenticationComponent, LoginComponent, SignupComponent],
   imports: [
     CommonModule,
-    AuthorizedUserRoutingModule,
+    RouterModule.forChild(authenticationRoutes),
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
   ],
 })
-export class AuthorizedUserModule {}
+export class AuthenticationModule {}

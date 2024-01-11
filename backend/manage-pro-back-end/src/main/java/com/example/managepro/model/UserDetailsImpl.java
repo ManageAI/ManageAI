@@ -1,13 +1,14 @@
 package com.example.managepro.model;
 
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.UUID;
 
 
+@Getter
 public class UserDetailsImpl implements UserDetails {
     private long id;
     private String userName;

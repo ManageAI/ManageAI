@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { SharedModule } from './shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthorizationComponent } from './authorization/authorization.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AuthorizationComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
