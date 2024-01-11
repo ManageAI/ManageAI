@@ -14,19 +14,20 @@ import {
 } from '@angular/animations';
 
 @Component({
-  selector: 'web-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss'],
-  animations: [
-    trigger('slideInOut', [
-      state('right', style({ transform: 'translateX(150%)' })),
-      state('left', style({ transform: 'translateX(-150%)' })),
-      state('in', style({ transform: 'translateX(0)' })),
-      transition('* => in', animate('600ms ease-in')),
-      transition('in => left', animate('600ms ease-out')),
-      transition('in => right', animate('600ms ease-out')),
-    ]),
-  ],
+    selector: 'web-product',
+    templateUrl: './product.component.html',
+    styleUrls: ['./product.component.scss'],
+    animations: [
+        trigger('slideInOut', [
+            state('right', style({ transform: 'translateX(150%)' })),
+            state('left', style({ transform: 'translateX(-150%)' })),
+            state('in', style({ transform: 'translateX(0)' })),
+            transition('* => in', animate('600ms ease-in')),
+            transition('in => left', animate('600ms ease-out')),
+            transition('in => right', animate('600ms ease-out')),
+        ]),
+    ],
+    standalone: true,
 })
 export class ProductComponent {
   @ViewChildren('cardElement') cards!: QueryList<ElementRef>;

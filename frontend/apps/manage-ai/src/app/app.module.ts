@@ -8,14 +8,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthorizationComponent } from './authorization/authorization.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthorizationComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    SharedModule,
-    RouterModule.forRoot(appRoutes),
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        SharedModule,
+        RouterModule.forRoot(appRoutes),
+        AuthorizationComponent,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

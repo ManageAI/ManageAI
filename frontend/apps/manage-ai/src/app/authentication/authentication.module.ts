@@ -11,13 +11,13 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
-  declarations: [AuthenticationComponent, LoginComponent, SignupComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(authenticationRoutes),
-    FormsModule,
-    ReactiveFormsModule,
-    SharedModule,
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(authenticationRoutes),
+        FormsModule,
+        ReactiveFormsModule,
+        SharedModule,
+        AuthenticationComponent, LoginComponent, SignupComponent,
+    ],
 })
 export class AuthenticationModule {}

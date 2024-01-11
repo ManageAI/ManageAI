@@ -4,14 +4,23 @@ import {
   EventEmitter,
   Output,
 } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { Registration } from 'apps/manage-ai/src/core/interfaces/registration.interface';
+import { FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Registration } from '../../../core/interfaces/registration.interface';
+import { RouterLink } from '@angular/router';
+import { InputComponent } from '../../../../../../libs/shared-components/src/lib/components/input/input.component';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-signup',
+    templateUrl: './signup.component.html',
+    styleUrls: ['./signup.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        InputComponent,
+        RouterLink,
+    ],
 })
 export class SignupComponent {
   @Output() signUp: EventEmitter<Registration> = new EventEmitter();

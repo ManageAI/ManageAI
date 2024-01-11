@@ -13,22 +13,20 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CapitalizeFirstLetterPipe } from './pipes/capitalize-first-letter.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavigationComponent,
-    HomeComponent,
-    AboutUsComponent,
-    ProductComponent,
-    ContactComponent,
-    FooterComponent,
-    CapitalizeFirstLetterPipe,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
+        NavigationComponent,
+        HomeComponent,
+        AboutUsComponent,
+        ProductComponent,
+        ContactComponent,
+        FooterComponent,
+        CapitalizeFirstLetterPipe,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}
