@@ -7,28 +7,25 @@ export const appRoutes: Route[] = [
 
   {
     path: 'login',
-    component: AuthenticationComponent,
-    loadChildren: () =>
-      import('./authentication/authentication.module').then(
-        (m) => m.AuthenticationModule
+    loadComponent: () =>
+      import('./authentication/authentication.component').then(
+        (m) => m.AuthenticationComponent
       ),
   },
 
   {
     path: 'signup',
-    component: AuthenticationComponent,
-    loadChildren: () =>
-      import('./authentication/authentication.module').then(
-        (m) => m.AuthenticationModule
+    loadComponent: () =>
+      import('./authentication/authentication.component').then(
+        (m) => m.AuthenticationComponent
       ),
   },
 
   {
     path: 'authorization',
-    component: AuthorizationComponent,
-    loadChildren: () =>
-      import('./authorization/authorization.module').then(
-        (m) => m.AuthorizationModule
+    loadComponent: () =>
+      import('./authorization/authorization.component').then(
+        (m) => m.AuthorizationComponent
       ),
   },
 ];

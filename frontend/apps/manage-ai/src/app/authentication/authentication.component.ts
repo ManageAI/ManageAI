@@ -4,12 +4,22 @@ import { AuthenticationService } from '../../core/services/authentication.servic
 import { Router } from '@angular/router';
 import { Authentication } from '../../core/interfaces/authentication.interface';
 import { Registration } from '../../core/interfaces/registration.interface';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { NgStyle, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-authentication',
-  templateUrl: './authentication.component.html',
-  styleUrls: ['./authentication.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-authentication',
+    templateUrl: './authentication.component.html',
+    styleUrls: ['./authentication.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [
+        NgStyle,
+        NgIf,
+        LoginComponent,
+        SignupComponent,
+    ],
 })
 export class AuthenticationComponent implements OnInit {
   loginForm = this._formBuilder.nonNullable.group({

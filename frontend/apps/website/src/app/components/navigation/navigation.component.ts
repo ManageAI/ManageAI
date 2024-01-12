@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
 import { ScrollService } from '../../services/scroll.service';
+import { CapitalizeFirstLetterPipe } from '../../pipes/capitalize-first-letter.pipe';
+import { NgClass, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'web-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss'],
+    selector: 'web-navigation',
+    templateUrl: './navigation.component.html',
+    styleUrls: ['./navigation.component.scss'],
+    standalone: true,
+    imports: [
+        NgClass,
+        NgFor,
+        CapitalizeFirstLetterPipe,
+    ],
 })
 export class NavigationComponent {
   isSelect!: string;
