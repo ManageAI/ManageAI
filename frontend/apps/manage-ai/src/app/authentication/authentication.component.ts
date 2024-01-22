@@ -9,17 +9,12 @@ import { LoginComponent } from './login/login.component';
 import { NgStyle, NgIf } from '@angular/common';
 
 @Component({
-    selector: 'app-authentication',
-    templateUrl: './authentication.component.html',
-    styleUrls: ['./authentication.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [
-        NgStyle,
-        NgIf,
-        LoginComponent,
-        SignupComponent,
-    ],
+  selector: 'app-authentication',
+  templateUrl: './authentication.component.html',
+  styleUrls: ['./authentication.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgStyle, NgIf, LoginComponent, SignupComponent],
 })
 export class AuthenticationComponent implements OnInit {
   loginForm = this._formBuilder.nonNullable.group({
@@ -43,7 +38,7 @@ export class AuthenticationComponent implements OnInit {
   }
 
   public signIn(loginForm: Partial<Authentication>): void {
-    this._router.navigate(['authorization']);
+    this._router.navigate(['auth']);
     // this._authService.authenticationLogin(loginForm).subscribe((x) => {
     //   console.log(x);
     // });
