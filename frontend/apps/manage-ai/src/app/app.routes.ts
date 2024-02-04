@@ -1,6 +1,4 @@
 import { Route } from '@angular/router';
-import { AuthenticationComponent } from './authentication/authentication.component';
-import { AuthorizationComponent } from './authorization/authorization.component';
 
 export const appRoutes: Route[] = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -22,7 +20,7 @@ export const appRoutes: Route[] = [
   },
 
   {
-    path: 'authorization',
+    path: 'auth',
     loadComponent: () =>
       import('./authorization/authorization.component').then(
         (m) => m.AuthorizationComponent
