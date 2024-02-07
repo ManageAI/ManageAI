@@ -1,5 +1,6 @@
 package com.example.managepro.model;
 
+import com.example.managepro.model.canban.Team;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
@@ -38,4 +39,6 @@ public class User {
     @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
 
+    @ManyToMany(mappedBy = "members")
+    private Collection<Team> teams;
 }
