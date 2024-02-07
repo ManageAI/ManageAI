@@ -1,0 +1,26 @@
+@import '../../../../shared/assets/scss/styles.scss';
+
+.app-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 70px 1fr;
+  grid-template-areas:
+    'navbar header'
+    'navbar content';
+  height: 100vh;
+
+  &__navbar {
+    border: 1px solid $color-primary;
+    grid-area: navbar;
+  }
+
+  &__header {
+    border-bottom: 1px solid $color-primary;
+    grid-area: header;
+  }
+
+  &__content {
+    grid-area: content;
+    overflow: auto;
+  }
+}
