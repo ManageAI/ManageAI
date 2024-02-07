@@ -25,7 +25,7 @@
   justify-content: center;
   margin-top: 35px;
   height: 60vh;
-  color: $color-primary;
+  color: $color-secondary;
 }
 
 .contact {
@@ -74,7 +74,7 @@
   align-self: center;
   width: 400px;
   height: 450px;
-  background-color: $color-secondary;
+  background-color: $color-primary;
   box-shadow: 0px 0px 25px $color-box-shadow;
   border-radius: 20px;
   padding: 30px;
@@ -141,7 +141,7 @@
   .contact {
     justify-content: center;
     box-shadow: none;
-    border-bottom: 1px solid $color-primary;
+    border-bottom: 1px solid $color-secondary;
     border-radius: 0;
 
     &__form {

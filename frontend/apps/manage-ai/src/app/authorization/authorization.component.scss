@@ -10,12 +10,12 @@
   height: 100vh;
 
   &__navbar {
-    border: 1px solid $color-primary;
+    border: 1px solid $color-secondary;
     grid-area: navbar;
   }
 
   &__header {
-    border-bottom: 1px solid $color-primary;
+    border-bottom: 1px solid $color-secondary;
     grid-area: header;
   }
 

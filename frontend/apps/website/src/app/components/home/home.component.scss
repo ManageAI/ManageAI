@@ -4,7 +4,7 @@
   display: flex;
   padding-top: 67px;
   min-height: 100vh;
-  border-bottom: 2px solid $color-primary;
+  border-bottom: 2px solid $color-secondary;
 
   &__content {
     display: flex;
@@ -14,7 +14,7 @@
     width: 100%;
     margin: 60px;
     padding: 30px;
-    background-color: $color-secondary;
+    background-color: $color-primary;
     border-radius: 20px;
   }
 
@@ -88,7 +88,7 @@
     &--gplus,
     &--linkedin,
     &--github {
-      background-color: $color-secondary;
+      background-color: $color-primary;
     }
   }
 
