@@ -1,17 +1,10 @@
 <nav class="nav">
   <a (click)="onLinkClick('home')" class="nav__logo">
-    <img
-      class="nav__logo-img"
-      src="shared/assets/icons/logo-25.svg"
-      alt="ManageAI logo"
-    />
+    <img class="nav__logo-img" src="shared/assets/icons/logo-25.svg" alt="ManageAI logo" />
     ManageAI
   </a>
   <ul class="nav__list">
-    <div
-      class="nav__items-container"
-      [ngClass]="{ 'nav__items-container--open': isNavbarOpen }"
-    >
+    <div class="nav__items-container" [ngClass]="{ 'nav__items-container--open': isNavbarOpen }">
       <li class="nav__item" *ngFor="let link of links">
         <a
           class="nav__link"
@@ -21,7 +14,7 @@
         >
       </li>
       <li class="nav__item">
-        <a class="nav__link nav__link--login" href="">Sign In</a>
+        <a class="nav__link nav__link--login" href="http://localhost:4202/login">Sign In</a>
       </li>
     </div>
     <div class="navbar-hamburger" (click)="openNavbar()">
