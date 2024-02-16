@@ -20,7 +20,10 @@
   }
 
   &__content {
+    background-color: #eeeeee;
     grid-area: content;
     overflow: auto;
+    border-radius: 16px;
+    margin: 16px;
   }
 }
