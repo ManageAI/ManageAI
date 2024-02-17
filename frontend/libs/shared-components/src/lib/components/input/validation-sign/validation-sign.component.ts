@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NgIf } from '@angular/common';
 @Component({
-    selector: 'shared-validation-sign',
-    templateUrl: './validation-sign.component.html',
-    styleUrls: ['./validation-sign.component.scss'],
-    standalone: true,
-    imports: [NgIf],
+  selector: 'ui-validation-sign',
+  templateUrl: './validation-sign.component.html',
+  styleUrls: ['./validation-sign.component.scss'],
+  standalone: true,
+  imports: [NgIf],
 })
 export class ValidationSignComponent {
   @Input() formField!: FormControl;

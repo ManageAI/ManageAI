@@ -1,36 +1,21 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  forwardRef,
-} from '@angular/core';
-import {
-  ControlValueAccessor,
-  FormControl,
-  FormGroup,
-  NG_VALUE_ACCESSOR,
-} from '@angular/forms';
+import { Component, EventEmitter, Input, Output, forwardRef } from '@angular/core';
+import { ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ValidationSignComponent } from './validation-sign/validation-sign.component';
 import { NgClass, NgIf } from '@angular/common';
 
 @Component({
-    selector: 'shared-input',
-    templateUrl: './input.component.html',
-    styleUrls: ['./input.component.scss'],
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => InputComponent),
-            multi: true,
-        },
-    ],
-    standalone: true,
-    imports: [
-        NgClass,
-        ValidationSignComponent,
-        NgIf,
-    ],
+  selector: 'ui-input',
+  templateUrl: './input.component.html',
+  styleUrls: ['./input.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => InputComponent),
+      multi: true,
+    },
+  ],
+  standalone: true,
+  imports: [NgClass, ValidationSignComponent, NgIf],
 })
 export class InputComponent implements ControlValueAccessor {
   @Input() id!: string;

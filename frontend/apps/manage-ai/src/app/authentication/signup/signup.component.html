@@ -2,7 +2,7 @@
 <span class="login-box__subtitle">ManageAI</span>
 
 <form [formGroup]="signUpForm" class="login-box__form">
-  <shared-input
+  <ui-input
     class="form__input"
     formControlName="fullName"
     [id]="'fullName'"
@@ -12,8 +12,8 @@
     [placeholder]="'John Doe'"
     [parentForm]="signUpForm"
     [fieldName]="'fullName'"
-  ></shared-input>
-  <shared-input
+  ></ui-input>
+  <ui-input
     class="form__input"
     formControlName="email"
     [id]="'email'"
@@ -23,8 +23,8 @@
     [placeholder]="'example@email.com'"
     [parentForm]="signUpForm"
     [fieldName]="'email'"
-  ></shared-input>
-  <shared-input
+  ></ui-input>
+  <ui-input
     class="form__input"
     formControlName="password"
     [id]="'password'"
@@ -34,8 +34,8 @@
     [placeholder]="'Enter a secure password'"
     [parentForm]="signUpForm"
     [fieldName]="'password'"
-  ></shared-input>
-  <shared-input
+  ></ui-input>
+  <ui-input
     class="form__input"
     formControlName="confirmPassword"
     [id]="'confirmPassword'"
@@ -45,7 +45,7 @@
     [placeholder]="'Confirm your password'"
     [parentForm]="signUpForm"
     [fieldName]="'confirmPassword'"
-  ></shared-input>
+  ></ui-input>
 </form>
 
 <button type="submit" class="login-box__submit-btn" (click)="createAccount()">Sign Up</button>
