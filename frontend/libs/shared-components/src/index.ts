@@ -1,1 +1,2 @@
-export * from './lib/shared-components.module';
+export * from './lib/components/input/input.component';
+export * from './lib/components/input-search/input-search.component';
