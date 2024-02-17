@@ -13,33 +13,37 @@
   &__links {
     margin-top: 32px;
   }
-}
 
-.link {
-  display: flex;
-  align-items: center;
-  margin: 8px 0;
-  height: 48px;
-  font-size: 14px;
-  border-radius: 8px;
-  transition: 0.2s;
-  cursor: pointer;
-}
+  &__link {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    height: 48px;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: 0.2s;
+    cursor: pointer;
 
-.link:hover {
-  background-color: $color-tertiary;
-  color: $color-primary;
-}
+    &:hover {
+      background-color: $color-tertiary;
+      color: $color-primary;
+    }
 
-.link.active {
-  background-color: $color-tertiary;
-  color: $color-primary;
-}
+    &--active {
+      background-color: $color-tertiary;
+      color: $color-primary;
+    }
+  }
 
-.icon {
-  padding: 10px;
-}
+  &__icon-container {
+    padding: 10px;
+  }
 
-img:hover {
-  color: white;
+  &__icon {
+    padding: 10px;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
 }

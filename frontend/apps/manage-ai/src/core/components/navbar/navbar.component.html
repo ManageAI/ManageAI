@@ -1,21 +1,19 @@
 <nav class="nav">
   <h1 class="nav__title">ManageAI</h1>
   <div class="nav__links">
-    <div class="link active">
-      <div class="icon">
-        <img class="icon" src="assets/icons/dashboard.svg" alt="" />
+    <ng-container *ngFor="let link of navbarLinks; let i = index">
+      <div
+        class="nav__link"
+        [ngClass]="{ 'nav__link--active': link.name === selectedLink }"
+        (click)="selectLink(link.name)"
+      >
+        <div class="nav__icon-container">
+          <svg-icon class="nav__icon" [src]="link.iconSrc" />
+        </div>
+        <div class="nav__text">
+          <p>{{ link.name | titlecase }}</p>
+        </div>
       </div>
-      <div class="text">
-        <p>Dashboard</p>
-      </div>
-    </div>
-    <div class="link">
-      <div class="icon">
-        <img class="icon" src="assets/icons/statistics.svg" alt="" />
-      </div>
-      <div class="text">
-        <p>Statistics</p>
-      </div>
-    </div>
+    </ng-container>
   </div>
 </nav>
