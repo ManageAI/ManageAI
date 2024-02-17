@@ -1,7 +1,7 @@
 <nav class="nav">
   <h1 class="nav__title">ManageAI</h1>
   <div class="nav__links">
-    <ng-container *ngFor="let link of navbarLinks; let i = index">
+    <ng-container *ngFor="let link of navbarLinks">
       <div
         class="nav__link"
         [ngClass]="{ 'nav__link--active': link.name === selectedLink }"
