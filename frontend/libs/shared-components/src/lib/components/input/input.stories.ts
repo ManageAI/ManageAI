@@ -11,7 +11,8 @@ type Story = StoryObj<typeof InputComponent>;
 export const Primary: Story = {
   render: () => ({
     props: {
-      label: 'input',
+      label: 'Input',
+      placeholder: 'Write something...',
     },
   }),
 };
