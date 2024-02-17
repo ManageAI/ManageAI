@@ -10,12 +10,11 @@
   height: 100vh;
 
   &__navbar {
-    border: 1px solid $color-secondary;
     grid-area: navbar;
+    margin: 16px;
   }
 
   &__header {
-    border-bottom: 1px solid $color-secondary;
     grid-area: header;
   }
 
@@ -24,6 +23,6 @@
     grid-area: content;
     overflow: auto;
     border-radius: 16px;
-    margin: 16px;
+    margin: 0 16px 16px;
   }
 }

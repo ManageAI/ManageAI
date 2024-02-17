@@ -1,0 +1,45 @@
+@use '../../../../../shared/assets/scss/styles.scss' as *;
+
+.nav {
+  height: 100%;
+  width: 100%;
+
+  &__title {
+    font-size: 48px;
+    text-align: center;
+    color: $color-tertiary;
+  }
+
+  &__links {
+    margin-top: 32px;
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  height: 48px;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.link:hover {
+  background-color: $color-tertiary;
+  color: $color-primary;
+}
+
+.link.active {
+  background-color: $color-tertiary;
+  color: $color-primary;
+}
+
+.icon {
+  padding: 10px;
+}
+
+img:hover {
+  color: white;
+}
