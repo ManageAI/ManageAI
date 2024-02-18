@@ -48,7 +48,7 @@ export class AuthenticationComponent implements OnInit, OnDestroy {
   }
 
   public signUp(form: RegisterForm): void {
-    this._subsink.sink = this._authService.authentication('signUp', form).subscribe((roles) => {
+    this._subsink.sink = this._authService.authentication('signup', form).subscribe((roles) => {
       this._navigateToProfile(roles);
     });
   }
