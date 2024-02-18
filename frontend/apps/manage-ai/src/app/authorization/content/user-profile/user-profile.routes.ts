@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardPage } from './dashboard/page/dashboard.page';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -13,7 +13,7 @@ export const userProfileRoutes: Route[] = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent,
+    component: DashboardPage,
   },
   {
     path: 'statistics',

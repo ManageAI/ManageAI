@@ -1,0 +1,17 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  margin: 0 8px;
+  border: 1px solid black;
+  height: 100%;
+
+  &__header {
+    height: 72px; 
+    border: 1px solid black;
+  }
+
+  &__canban {
+    height: 100%;
+    border: 1px solid black;
+  }
+}
