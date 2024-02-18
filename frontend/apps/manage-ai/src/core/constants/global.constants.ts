@@ -3,5 +3,6 @@ export abstract class GlobalConstants {
     ROLE_ADMIN: 'user-profile',
     ROLE_CEO: 'ceo-profile',
     ROLE_CLIENT: 'client-profile',
+    ROLE_USER: 'user-profile',
   };
 }

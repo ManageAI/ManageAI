@@ -9,7 +9,7 @@ export const authorizationGuard: CanActivateChildFn = () => {
   return authService.authorizedUser$.pipe(
     take(1),
     map(({ userRoles }) => {
-      if (userRoles.includes('ROLE_ADMIN')) {
+      if (userRoles.includes('ROLE_ADMIN') || userRoles.includes('ROLE_USER')) {
         return true;
       } else {
         return false;
