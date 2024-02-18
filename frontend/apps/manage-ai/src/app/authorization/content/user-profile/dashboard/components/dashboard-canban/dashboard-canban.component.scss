@@ -1,0 +1,108 @@
+@use '../../../../../../../../../shared/assets/scss/styles.scss' as *;
+
+// TODO: need code refactoring
+
+.todo,
+.inprogress,
+.done {
+  height: 100%;
+  flex: 1;
+  padding: 16px 8px;
+}
+
+.todo__title {
+  color: red;
+}
+
+.inprogress__title {
+  color: orange;
+}
+
+.done__title {
+  color: green;
+}
+
+h2 {
+  padding: 8px 0;
+  text-align: center;
+  font-size: 20px;
+}
+
+.example-box {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.card {
+  background-color: $color-primary;
+  border-radius: 16px;
+  width: 328px;
+  height: 212px;
+  padding: 24px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.description {
+  margin-top: 18px;
+}
+
+.description-text {
+  color: #161d17;
+}
+
+.tags {
+  display: flex;
+  margin-top: 18px;
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $color-tertiary;
+  border-radius: 8px;
+  width: 70px;
+  height: 28px;
+  font-size: 12px;
+}
+
+.tag:not(:first-child) {
+  margin: 0 10px;
+}
+
+.users {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.time-left {
+  display: flex;
+  align-items: center;
+}
+
+.hours {
+  font-size: 11px;
+  color: #6d7b6d;
+}
+
+.assigned-users {
+  display: flex;
+}
+
+.comments {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  margin: 0 15px;
+  color: #6d7b6d;
+}

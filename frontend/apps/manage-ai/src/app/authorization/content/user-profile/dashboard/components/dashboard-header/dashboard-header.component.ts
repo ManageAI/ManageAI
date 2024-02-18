@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -8,5 +8,6 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, FormsModule],
   templateUrl: './dashboard-header.component.html',
   styleUrls: ['./dashboard-header.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardHeaderComponent {}

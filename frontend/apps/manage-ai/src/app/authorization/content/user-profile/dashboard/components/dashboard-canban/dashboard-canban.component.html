@@ -1,1 +1,115 @@
-<p>dashboard-canban works!</p>
+<!-- MOCKED DATA ( in the furure, this code will be generative) -->
+
+<div class="todo">
+  <h2 class="todo__title">To Do</h2>
+  <div
+    id="todoList"
+    class="example-list"
+    cdkDropList
+    [cdkDropListData]="todo"
+    [cdkDropListConnectedTo]="['inProgressList', 'doneList']"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="example-box" *ngFor="let item of todo" cdkDrag>
+      <div class="card">
+        <div class="title">
+          <h3>{{ item }}</h3>
+          <img src="assets/icons/more-icon.svg" alt="" />
+        </div>
+        <div class="description">
+          <p class="description-text">Get rubbish from the apartment and throw them into the bin</p>
+        </div>
+        <div class="tags">
+          <div class="tag">Chores</div>
+          <div class="tag">Food</div>
+        </div>
+        <div class="users">
+          <div class="time-left">
+            <p class="hours">4 hours left</p>
+          </div>
+          <div class="assigned-users">
+            <img src="assets/icons/person.svg" width="24px" height="24px" alt="" />
+            <div class="comments">1</div>
+            <img src="assets/icons/comments.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="inprogress">
+  <h2 class="inprogress__title">In Progress</h2>
+  <div
+    id="inProgressList"
+    class="example-list"
+    cdkDropList
+    [cdkDropListData]="inProgress"
+    [cdkDropListConnectedTo]="['todoList', 'doneList']"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="example-box" *ngFor="let item of inProgress" cdkDrag>
+      <div class="card">
+        <div class="title">
+          <h3>{{ item }}</h3>
+          <img src="assets/icons/more-icon.svg" alt="" />
+        </div>
+        <div class="description">
+          <p class="description-text">Get rubbish from the apartment and throw them into the bin</p>
+        </div>
+        <div class="tags">
+          <div class="tag">Chores</div>
+          <div class="tag">Food</div>
+        </div>
+        <div class="users">
+          <div class="time-left">
+            <p class="hours">4 hours left</p>
+          </div>
+          <div class="assigned-users">
+            <img src="assets/icons/person.svg" width="24px" height="24px" alt="" />
+            <div class="comments">1</div>
+            <img src="assets/icons/comments.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="done">
+  <h2 class="done__title">Done</h2>
+  <div
+    id="doneList"
+    class="example-list"
+    cdkDropList
+    [cdkDropListData]="done"
+    [cdkDropListConnectedTo]="['todoList', 'inProgressList']"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="example-box" *ngFor="let item of done" cdkDrag>
+      <div class="card">
+        <div class="title">
+          <h3>{{ item }}</h3>
+          <img src="assets/icons/more-icon.svg" alt="" />
+        </div>
+        <div class="description">
+          <p class="description-text">Get rubbish from the apartment and throw them into the bin</p>
+        </div>
+        <div class="tags">
+          <div class="tag">Chores</div>
+          <div class="tag">Food</div>
+        </div>
+        <div class="users">
+          <div class="time-left">
+            <p class="hours">4 hours left</p>
+          </div>
+          <div class="assigned-users">
+            <img src="assets/icons/person.svg" width="24px" height="24px" alt="" />
+            <div class="comments">1</div>
+            <img src="assets/icons/comments.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
