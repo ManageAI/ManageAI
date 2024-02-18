@@ -1,0 +1,56 @@
+@use '../../../../../../../../../shared/assets/scss/styles.scss' as *;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters {
+  display: flex;
+}
+
+.select-tags,
+.select-users {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #6d7b6d;
+  width: 250px;
+  padding: 15px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #6d7b6d;
+}
+
+.select-tags {
+  margin-right: 16px;
+}
+
+.select-arrow {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 14px;
+  border: none;
+  height: 40px;
+  width: 170px;
+  background-color: $color-tertiary;
+  color: $color-primary;
+  cursor: pointer;
+}
+
+img {
+  margin-right: 15px;
+}

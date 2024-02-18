@@ -2,16 +2,21 @@
   display: flex;
   flex-direction: column;
   margin: 0 8px;
-  border: 1px solid black;
   height: 100%;
 
   &__header {
-    height: 72px; 
-    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    height: 72px;
+    padding: 16px;
   }
 
   &__canban {
     height: 100%;
     border: 1px solid black;
   }
+}
+
+.header {
+  width: 100%;
 }
