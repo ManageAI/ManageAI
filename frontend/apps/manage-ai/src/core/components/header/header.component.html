@@ -5,7 +5,14 @@
   </div>
   <!-- MOCK VALUES -->
   <div class="header__profile">
-    <img class="profile__img" src="assets/icons/english-language.svg" alt="language" />
+    <img
+      class="profile__img"
+      [src]="isEnglishLanguageSet ? englishLanguageIcon : polishLanguageIcon"
+      width="30px"
+      height="30px"
+      alt="language"
+      (click)="switchLanguage()"
+    />
     <img class="profile__img" src="assets/icons/dark-mode.svg" alt="dark-mode" />
     <img class="profile__img" src="assets/icons/notifications.svg" alt="notifications" />
     <div class="profile__photo">
