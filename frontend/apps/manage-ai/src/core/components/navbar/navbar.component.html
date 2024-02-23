@@ -11,7 +11,7 @@
           <svg-icon class="nav__icon" [src]="link.iconSrc" />
         </div>
         <div class="nav__text">
-          <p>{{ link.name | titlecase }}</p>
+          <p>{{ link.name | translate | titlecase }}</p>
         </div>
       </div>
     </ng-container>
