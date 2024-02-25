@@ -2,13 +2,15 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InputSearchComponent } from '../../../../../../libs/shared-components/src/lib/components/input-search/input-search.component';
 import { TranslateService } from '@ngx-translate/core';
+import { UserPreferencesService } from '../../services/user-preferences.service';
+import { SvgIconComponent } from 'angular-svg-icon';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   standalone: true,
-  imports: [CommonModule, InputSearchComponent],
+  imports: [CommonModule, InputSearchComponent, SvgIconComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
@@ -16,8 +18,10 @@ export class HeaderComponent {
   englishLanguageIcon = 'assets/icons/english-language.svg';
 
   isEnglishLanguageSet = true;
+  isDarkMode = false;
 
   private _translateService = inject(TranslateService);
+  private _userPreferencesService = inject(UserPreferencesService);
 
   switchLanguage() {
     this.isEnglishLanguageSet = !this.isEnglishLanguageSet;
@@ -27,5 +31,11 @@ export class HeaderComponent {
     } else {
       this._translateService.use('polish');
     }
+  }
+
+  public setDarkMode(): void {
+    this.isDarkMode = !this.isDarkMode;
+
+    this._userPreferencesService.setDarkMode(this.isDarkMode);
   }
 }

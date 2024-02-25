@@ -1,4 +1,4 @@
-@import '../../../../shared/assets/scss/styles.scss';
+@use '../../../../shared/assets/scss/styles.scss' as *;
 
 .app-container {
   display: grid;
@@ -19,7 +19,7 @@
   }
 
   &__content {
-    background-color: #eeeeee;
+    background-color: var(--color-background-content);
     grid-area: content;
     overflow: auto;
     border-radius: 16px;

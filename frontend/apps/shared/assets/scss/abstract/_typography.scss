@@ -1,5 +1,33 @@
 :root {
   font-size: 16px;
+
+  --color-primary: #ffffff;
+  --color-secondary: #000000;
+  --color-tertiary: #006d38;
+
+  --color-background-content: #eeeeee;
+  --color-description: #161d17;
+  --color-outline: #6d7b6d;
+
+  // DARK MODE
+
+  --color-primary-dark: #131313;
+  --color-secondary-dark: #dde5da;
+  --color-tertiary-dark: #4ce086;
+
+  --color-background-content-dark: #1f1f1f;
+  --color-description-dark: #dde5da;
+  --color-outline-dark: #869487;
+}
+
+[data-theme='dark'] {
+  --color-primary: var(--color-primary-dark);
+  --color-secondary: var(--color-secondary-dark);
+  --color-tertiary: var(--color-tertiary-dark);
+
+  --color-background-content: var(--color-background-content-dark);
+  --color-description: var(--color-description);
+  --color-outline-dark: var(--color-outline-dark);
 }
 
 $body-font-size: 1rem;
@@ -8,6 +36,8 @@ $a-font-size: 1.2rem;
 body {
   font-family: 'Poppins', sans-serif;
   font-size: $body-font-size;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 a {

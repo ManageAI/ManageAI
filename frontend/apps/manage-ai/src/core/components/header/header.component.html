@@ -13,8 +13,13 @@
       alt="language"
       (click)="switchLanguage()"
     />
-    <img class="profile__img" src="assets/icons/dark-mode.svg" alt="dark-mode" />
-    <img class="profile__img" src="assets/icons/notifications.svg" alt="notifications" />
+    <svg-icon
+      class="profile__img"
+      src="assets/icons/dark-mode.svg"
+      alt="dark-mode"
+      (click)="setDarkMode()"
+    />
+    <svg-icon class="profile__img" src="assets/icons/notifications.svg" alt="notifications" />
     <div class="profile__photo">
       <img class="person" src="assets/icons/person.svg" alt="" />
     </div>

@@ -7,7 +7,7 @@
   &__title {
     font-size: 48px;
     text-align: center;
-    color: $color-tertiary;
+    color: var(--color-tertiary);
   }
 
   &__links {
@@ -25,13 +25,13 @@
     cursor: pointer;
 
     &:hover {
-      background-color: $color-tertiary;
-      color: $color-primary;
+      background-color: var(--color-tertiary);
+      color: var(--color-primary);
     }
 
     &--active {
-      background-color: $color-tertiary;
-      color: $color-primary;
+      background-color: var(--color-tertiary);
+      color: var(--color-primary);
     }
   }
 
@@ -43,7 +43,7 @@
     padding: 10px;
 
     &:hover {
-      color: $color-primary;
+      color: var(--color-primary);
     }
   }
 }
