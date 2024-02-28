@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angul
 import { FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterForm } from '../../../core/interfaces/register-form.interface';
 import { RouterLink } from '@angular/router';
-import { InputComponent } from '../../../../../../libs/shared-components/src/lib/components/input/input.component';
+import { InputComponent } from '../../../../../../libs/ui-components/src/lib/components/input/input.component';
 
 @Component({
   selector: 'app-signup',
