@@ -48,7 +48,13 @@
   ></ui-input>
 </form>
 
-<button type="submit" class="login-box__submit-btn" (click)="createAccount()">Sign Up</button>
+<ui-button
+  class="login-box__submit-btn"
+  [type]="'submit'"
+  [width]="'100px'"
+  [content]="'Sign Up'"
+  (click)="createAccount()"
+></ui-button>
 
 <div class="register">
   <p class="register__text">

@@ -3,6 +3,7 @@ import { FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angu
 import { LoginForm } from 'apps/manage-ai/src/core/interfaces/login-form.interface';
 import { RouterLink } from '@angular/router';
 import { InputComponent } from '../../../../../../libs/ui-components/src/lib/components/input/input.component';
+import { ButtonComponent } from '../../../../../../libs/ui-components/src/lib/components/button/button.component';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { InputComponent } from '../../../../../../libs/ui-components/src/lib/com
   styleUrls: ['./login.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, InputComponent, RouterLink],
+  imports: [FormsModule, ReactiveFormsModule, InputComponent, RouterLink, ButtonComponent],
 })
 export class LoginComponent {
   @Output() signIn = new EventEmitter<LoginForm>();

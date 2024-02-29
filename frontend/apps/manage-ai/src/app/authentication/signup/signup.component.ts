@@ -3,6 +3,7 @@ import { FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angu
 import { RegisterForm } from '../../../core/interfaces/register-form.interface';
 import { RouterLink } from '@angular/router';
 import { InputComponent } from '../../../../../../libs/ui-components/src/lib/components/input/input.component';
+import { ButtonComponent } from '../../../../../../libs/ui-components/src/lib/components/button/button.component';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +11,7 @@ import { InputComponent } from '../../../../../../libs/ui-components/src/lib/com
   styleUrls: ['./signup.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, InputComponent, RouterLink],
+  imports: [FormsModule, ReactiveFormsModule, InputComponent, RouterLink, ButtonComponent],
 })
 export class SignupComponent {
   @Output() signUp: EventEmitter<RegisterForm> = new EventEmitter();

@@ -1,0 +1,28 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  font-size: 14px;
+  border: none;
+  height: 40px;
+  // width: 170px;
+  background-color: var(--color-tertiary);
+  color: var(--color-primary);
+  transition: 0.3s;
+  cursor: pointer;
+
+  &__content {
+    font-size: 15px;
+  }
+
+  &__img {
+    display: flex;
+    margin-right: 15px;
+    fill: var(--color-primary);
+  }
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}
