@@ -23,7 +23,7 @@ export class HeaderComponent {
   private _translateService = inject(TranslateService);
   private _userPreferencesService = inject(UserPreferencesService);
 
-  switchLanguage() {
+  public switchLanguage(): void {
     this.isEnglishLanguageSet = !this.isEnglishLanguageSet;
 
     if (this.isEnglishLanguageSet) {

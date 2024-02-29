@@ -13,9 +13,11 @@ img {
 
 .input {
   font-size: 14px;
+  padding-right: 20px;
   width: 100%;
   border: none;
   border-radius: 8px;
   background: transparent;
+  color: var(--color-outline);
   outline: none;
 }
