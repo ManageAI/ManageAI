@@ -31,27 +31,3 @@
   display: flex;
   align-items: center;
 }
-
-.button {
-  display: flex;
-  align-items: center;
-}
-
-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  font-size: 14px;
-  border: none;
-  height: 40px;
-  width: 170px;
-  background-color: var(--color-tertiary);
-  color: var(--color-primary);
-  cursor: pointer;
-}
-
-.img {
-  fill: var(--color-primary);
-  margin-right: 15px;
-}
