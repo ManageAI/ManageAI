@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angul
 import { FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginForm } from 'apps/manage-ai/src/core/interfaces/login-form.interface';
 import { RouterLink } from '@angular/router';
-import { InputComponent } from '../../../../../../libs/ui-components/src/lib/components/input/input.component';
-import { ButtonComponent } from '../../../../../../libs/ui-components/src/lib/components/button/button.component';
+import { InputComponent } from '@frontend/ui-components';
+import { ButtonComponent } from '@frontend/ui-components';
 
 @Component({
   selector: 'app-login',

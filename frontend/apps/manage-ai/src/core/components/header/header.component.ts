@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InputSearchComponent } from '../../../../../../libs/ui-components/src/lib/components/input-search/input-search.component';
+import { InputSearchComponent } from '@frontend/ui-components';
 import { TranslateService } from '@ngx-translate/core';
 import { UserPreferencesService } from '../../services/user-preferences.service';
 import { SvgIconComponent } from 'angular-svg-icon';

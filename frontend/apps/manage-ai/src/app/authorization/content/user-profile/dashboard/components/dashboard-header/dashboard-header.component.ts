@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SvgIconComponent } from 'angular-svg-icon';
-import { ButtonComponent } from '../../../../../../../../../../libs/ui-components/src/lib/components/button/button.component';
+import { ButtonComponent } from '@frontend/ui-components';
 
 @Component({
   selector: 'app-dashboard-header',
