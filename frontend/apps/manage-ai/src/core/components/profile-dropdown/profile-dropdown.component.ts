@@ -4,13 +4,14 @@ import { InputSearchComponent } from '@frontend/ui-components';
 import { TranslateService } from '@ngx-translate/core';
 import { UserPreferencesService } from '../../services/user-preferences.service';
 import { SvgIconComponent } from 'angular-svg-icon';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-profile-dropdown',
   standalone: true,
   templateUrl: './profile-dropdown.component.html',
   styleUrls: ['./profile-dropdown.component.scss'],
-  imports: [CommonModule, InputSearchComponent, SvgIconComponent],
+  imports: [CommonModule, TranslateModule, InputSearchComponent, SvgIconComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfileDropdownComponent {

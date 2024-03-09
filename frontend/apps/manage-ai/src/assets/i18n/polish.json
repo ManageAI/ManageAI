@@ -3,5 +3,12 @@
   "statistics": "statystyka",
   "calendar": "kalendarz",
   "messages": "wiadomości",
-  "settings": "ustawienia"
+  "settings": "ustawienia",
+
+  "Profile": "Profil",
+  "English": "Angielski",
+  "Polish": "Polski",
+  "Dark Mode": "Tryb Ciemny",
+  "Light Mode": "Tryb Jasny",
+  "Logout": "Wyloguj"
 }
