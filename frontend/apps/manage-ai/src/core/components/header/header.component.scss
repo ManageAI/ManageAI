@@ -14,6 +14,7 @@
   &__profile {
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
 
   .photo,
@@ -26,8 +27,7 @@
   .profile {
     &__img {
       margin: 0 15px;
-      color: (--color-primary);
-      cursor: pointer;
+      color: var(--color-secondary);
     }
   }
 

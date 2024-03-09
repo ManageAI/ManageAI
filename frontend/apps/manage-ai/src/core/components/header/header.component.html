@@ -5,22 +5,8 @@
   </div>
   <!-- MOCK VALUES -->
   <div class="header__profile">
-    <img
-      class="profile__img"
-      [src]="isEnglishLanguageSet ? englishLanguageIcon : polishLanguageIcon"
-      width="30px"
-      height="30px"
-      alt="language"
-      (click)="switchLanguage()"
-    />
-    <svg-icon
-      class="profile__img"
-      src="assets/icons/dark-mode.svg"
-      alt="dark-mode"
-      (click)="setDarkMode()"
-    />
     <svg-icon class="profile__img" src="assets/icons/notifications.svg" alt="notifications" />
-    <div class="profile__photo">
+    <div class="profile__photo" appProfileDropdown>
       <img class="person" src="assets/icons/person.svg" alt="" />
     </div>
     <p class="profile__username">Rajesh Singh</p>
