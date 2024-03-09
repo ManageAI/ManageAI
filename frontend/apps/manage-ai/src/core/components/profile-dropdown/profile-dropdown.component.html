@@ -1,0 +1,44 @@
+<div class="dropdown">
+  <ul class="dropdown__list">
+    <li class="dropdown__item">
+      <svg-icon
+        class="dropdown__icon"
+        src="assets/icons/profile.svg"
+        alt="Profile"
+        width="20"
+        height="20"
+      />
+      <p class="dropdown__text">Profile</p>
+    </li>
+    <li class="dropdown__item" (click)="switchLanguage()">
+      <svg-icon
+        class="dropdown__icon"
+        [src]="isEnglishLanguageSet ? englishLanguageIcon : polishLanguageIcon"
+        alt="Language selection"
+        width="20"
+        height="20"
+      />
+      <p class="dropdown__text">English</p>
+    </li>
+    <li class="dropdown__item" (click)="setDarkMode()">
+      <svg-icon
+        class="dropdown__icon"
+        src="assets/icons/dark-mode.svg"
+        alt="Dark/light mode"
+        width="20"
+        height="20"
+      />
+      <p class="dropdown__text">Dark Mode</p>
+    </li>
+    <li class="dropdown__item">
+      <svg-icon
+        class="dropdown__icon"
+        src="assets/icons/logout.svg"
+        alt="Logout"
+        width="20"
+        height="20"
+      />
+      <p class="dropdown__text">Logout</p>
+    </li>
+  </ul>
+</div>
