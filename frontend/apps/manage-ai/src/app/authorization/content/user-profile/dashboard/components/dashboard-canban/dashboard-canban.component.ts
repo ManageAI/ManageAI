@@ -7,11 +7,12 @@ import {
   CdkDrag,
   CdkDropList,
 } from '@angular/cdk/drag-drop';
+import { TagComponent } from '@frontend/ui-components';
 
 @Component({
   selector: 'app-dashboard-canban',
   standalone: true,
-  imports: [CommonModule, CdkDrag, CdkDropList],
+  imports: [CommonModule, CdkDrag, CdkDropList, TagComponent],
   templateUrl: './dashboard-canban.component.html',
   styleUrls: ['./dashboard-canban.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
