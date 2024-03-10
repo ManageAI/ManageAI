@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output, forwardRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { SvgIconComponent } from 'angular-svg-icon';
 
 @Component({
   selector: 'ui-input-search',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SvgIconComponent],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
