@@ -1,0 +1,37 @@
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid var(--color-outline);
+  width: 250px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--color-outline);
+
+  &:focus-within {
+    border: 1px solid var(--color-tertiary);
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+  }
+}
+
+.select:focus-within .select__icon {
+  color: var(--color-tertiary);
+  transform: rotate(180deg);
+}
+
+.input {
+  font-size: 14px;
+  padding: 5px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-outline);
+  background-color: transparent;
+  outline: none;
+}
