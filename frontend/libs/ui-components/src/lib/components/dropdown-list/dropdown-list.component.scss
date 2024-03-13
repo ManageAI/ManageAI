@@ -1,0 +1,9 @@
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: var(--color-primary);
+  box-shadow: 0 1px 3px var(--color-outline);
+}
