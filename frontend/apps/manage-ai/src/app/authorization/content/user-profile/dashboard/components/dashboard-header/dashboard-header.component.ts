@@ -16,6 +16,43 @@ import { FilterComponent } from '@frontend/ui-components';
 export class DashboardHeaderComponent {
   addIconSrc = 'assets/icons/add-icon.svg';
 
+  mockData = [
+    {
+      id: '1',
+      img: 'assets/icons/person.svg',
+      firstName: 'Jerzy',
+      lastName: 'Kukulka',
+      name: 'Jerzy Kukulka',
+    },
+    {
+      id: '2',
+      img: 'assets/icons/person.svg',
+      firstName: 'Andrzej',
+      lastName: 'Piernik',
+      name: 'Andrzej Piernik',
+    },
+    {
+      id: '3',
+      img: 'assets/icons/person.svg',
+      firstName: 'Janina',
+      lastName: 'Koras',
+      name: 'Janina Koras',
+    },
+    {
+      id: '4',
+      img: 'assets/icons/person.svg',
+      firstName: 'Lulu',
+      lastName: 'Papajo',
+      name: 'Lulu Papajo',
+    },
+  ];
+
+  mockDataTags = [
+    { id: '1', name: 'Chores' },
+    { id: '2', name: 'Food' },
+    { id: '3', name: 'Smoke' },
+  ];
+
   public openModal(): void {
     console.log('clicked');
   }

@@ -1,6 +1,7 @@
 <div class="container">
   <div class="filters">
-    <ui-filter [placeholder]="'Filter by tags'"></ui-filter>
+    <ui-filter [props]="mockData" [placeholder]="'Filter by users'"></ui-filter>
+    <ui-filter [props]="mockDataTags" [placeholder]="'Filter by tags'"></ui-filter>
   </div>
   <div class="button">
     <ui-button
