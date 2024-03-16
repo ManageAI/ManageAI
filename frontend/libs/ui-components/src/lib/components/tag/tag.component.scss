@@ -7,4 +7,16 @@
   width: 70px;
   height: 28px;
   font-size: 12px;
+
+  &--user {
+    justify-content: space-around;
+    width: 100px;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    color: var(--color-secondary);
+    cursor: pointer;
+  }
 }
