@@ -51,7 +51,7 @@ public class AuthService {
                 .token(token)
                 .email(user.getUserEmail())
                 .fullName(user.getUserName())
-                .userRoles(new HashSet<>(user.getRoles().stream().map(Role::getName).collect(Collectors.toSet())))
+                .userRoles(new HashSet<>(user.getRoles().stream().map(role -> role.getName().toString()).collect(Collectors.toSet())))
                 .build();
     }
 
@@ -69,7 +69,7 @@ public class AuthService {
                 .id(user.getId())
                 .email(user.getUserEmail())
                 .fullName(user.getUserName())
-                .userRoles(new HashSet<>(user.getRoles().stream().map(Role::getName).collect(Collectors.toSet())))
+                .userRoles(new HashSet<>(user.getRoles().stream().map(role -> role.getName().toString()).collect(Collectors.toSet())))
                 .token(token)
                 .build();
 
