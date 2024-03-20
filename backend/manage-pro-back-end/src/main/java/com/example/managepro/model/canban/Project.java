@@ -1,6 +1,5 @@
 package com.example.managepro.model.canban;
 
-óimport com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
