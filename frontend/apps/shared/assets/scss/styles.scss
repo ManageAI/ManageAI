@@ -5,4 +5,7 @@
 @import './abstract/breakpoints';
 @import './base/utilities';
 @import './typed/typed';
+
+@import './components/modal';
+
 @import '@angular/cdk/overlay-prebuilt.css';
