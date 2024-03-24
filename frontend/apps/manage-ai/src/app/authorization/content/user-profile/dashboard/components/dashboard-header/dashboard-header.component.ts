@@ -4,11 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { SvgIconComponent } from 'angular-svg-icon';
 import { ButtonComponent } from '@frontend/ui-components';
 import { FilterComponent } from '@frontend/ui-components';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { AddTaskModalComponent } from '../../../../../../../core/components/add-task-modal/add-task-modal.component';
 
 @Component({
   selector: 'app-dashboard-header',
   standalone: true,
-  imports: [CommonModule, FormsModule, SvgIconComponent, ButtonComponent, FilterComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    SvgIconComponent,
+    ButtonComponent,
+    FilterComponent,
+    MatDialogModule,
+  ],
   templateUrl: './dashboard-header.component.html',
   styleUrls: ['./dashboard-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -53,7 +62,16 @@ export class DashboardHeaderComponent {
     { id: '3', name: 'Smoke' },
   ];
 
+  constructor(public dialog: MatDialog) {}
+
   public openModal(): void {
-    console.log('clicked');
+    const modalRef = this.dialog.open(AddTaskModalComponent, {
+      height: '200px',
+      width: '500px',
+    });
+
+    modalRef.afterClosed().subscribe((x) => {
+      console.log(x);
+    });
   }
 }
