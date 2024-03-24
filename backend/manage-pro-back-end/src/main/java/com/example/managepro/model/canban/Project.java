@@ -29,4 +29,5 @@ public class Project {
     private Team team;
 
     //TODO project statistics to DTO
+    //TODO add selected project boolean field
 }

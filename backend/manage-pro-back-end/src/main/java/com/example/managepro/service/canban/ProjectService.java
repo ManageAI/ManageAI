@@ -1,6 +1,7 @@
 package com.example.managepro.service.canban;
 
 import com.example.managepro.dto.canban.ProjectDto;
+import com.example.managepro.exceptions.ProjectNotFoundException;
 import com.example.managepro.model.canban.Project;
 import com.example.managepro.model.canban.TaskState;
 import com.example.managepro.repository.canban.ProjectRepository;
@@ -34,5 +35,10 @@ public class ProjectService {
 
     private List<TaskState> getDefaultTaskStates() {
         return taskStateService.creteDefaultTaskStates();
+    }
+
+    public ProjectDto getProjectById(String id) {
+        Project project = projectRepository.findById(Long.parseLong(id)).orElseThrow(() ->  new ProjectNotFoundException(id));
+        return modelMapper.map(project, ProjectDto.class);
     }
 }
