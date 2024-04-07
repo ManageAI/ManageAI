@@ -1,0 +1,28 @@
+<div class="task">
+  <div class="u-space-between">
+    <h3 class="task__title">{{ task.title }}</h3>
+    <img src="assets/icons/more-icon.svg" alt="More Options" />
+  </div>
+  <div class="u-margin-top-2">
+    <p class="task__description">{{ task.description }}</p>
+  </div>
+  <div class="task__tags">
+    <ui-tag *ngFor="let tag of task.tags" class="task__tag" [itemContent]="tag"></ui-tag>
+  </div>
+  <div class="task__users">
+    <div class="u-align-center">
+      <p class="task__time">{{ task.timeLeft }}</p>
+    </div>
+    <div class="task__assigned-users">
+      <img
+        *ngFor="let photo of task.assignedUsersPhoto"
+        [src]="photo"
+        width="24px"
+        height="24px"
+        alt="User Photo"
+      />
+      <div class="task__comments">{{ task.commentsAmount }}</div>
+      <img src="assets/icons/comments.svg" alt="Comments" />
+    </div>
+  </div>
+</div>
