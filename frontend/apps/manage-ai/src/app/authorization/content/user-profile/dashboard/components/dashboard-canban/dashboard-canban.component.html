@@ -1,49 +1,17 @@
-<!-- MOCKED DATA ( in the furure, this code will be generative) -->
-
-<div class="todo">
-  <h2 class="todo__title">To Do</h2>
-  <div
-    id="todo"
-    class="example-list"
-    cdkDropList
-    [cdkDropListData]="todo"
-    [cdkDropListConnectedTo]="['inProgress', 'done']"
-    (cdkDropListDropped)="drop($event)"
-  >
-    <div class="example-box" *ngFor="let task of todo" cdkDrag>
-      <app-task [task]="task"></app-task>
+<ng-container *ngFor="let state of taskStates">
+  <div class="column">
+    <h2 class="column__title" [style]="{ color: state.color }">{{ state.taskStateName }}</h2>
+    <div
+      [id]="state.taskStateName"
+      class="u-height-100"
+      cdkDropList
+      [cdkDropListData]="state.tasks"
+      [cdkDropListConnectedTo]="state.connectedTo"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <ng-container *ngFor="let task of state.tasks">
+        <app-task class="column__task-container" [task]="task" cdkDrag></app-task>
+      </ng-container>
     </div>
   </div>
-</div>
-
-<div class="inprogress">
-  <h2 class="inprogress__title">In Progress</h2>
-  <div
-    id="inProgress"
-    class="example-list"
-    cdkDropList
-    [cdkDropListData]="inProgress"
-    [cdkDropListConnectedTo]="['todo', 'done']"
-    (cdkDropListDropped)="drop($event)"
-  >
-    <div class="example-box" *ngFor="let task of inProgress" cdkDrag>
-      <app-task [task]="task"></app-task>
-    </div>
-  </div>
-</div>
-
-<div class="done">
-  <h2 class="done__title">Done</h2>
-  <div
-    id="done"
-    class="example-list"
-    cdkDropList
-    [cdkDropListData]="done"
-    [cdkDropListConnectedTo]="['todo', 'inProgress']"
-    (cdkDropListDropped)="drop($event)"
-  >
-    <div class="example-box" *ngFor="let task of done" cdkDrag>
-      <app-task [task]="task"></app-task>
-    </div>
-  </div>
-</div>
+</ng-container>

@@ -12,53 +12,73 @@ import { TaskComponent } from './task/task.component';
 
 @Component({
   selector: 'app-dashboard-canban',
-  standalone: true,
-  imports: [CommonModule, CdkDrag, CdkDropList, TagComponent, TaskComponent],
   templateUrl: './dashboard-canban.component.html',
   styleUrls: ['./dashboard-canban.component.scss'],
+  standalone: true,
+  imports: [CommonModule, CdkDrag, CdkDropList, TagComponent, TaskComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardCanbanComponent {
-  todo = [
+  taskStates = [
     {
-      id: '1',
-      title: 'Get to work',
-      description: 'Get rubbish from the apartment and throw them into the bin',
-      tags: ['Chores', 'Food'],
-      timeLeft: '4 hours',
-      assignedUsersPhoto: ['assets/icons/person.svg'],
-      commentsAmount: '1',
-    },
-  ];
-  inProgress = [
-    {
-      id: '1',
-      title: 'Pick up groceries',
-      description: 'Get rubbish from the apartment and throw them into the bin',
-      tags: ['Chores', 'Food'],
-      timeLeft: '4 hours',
-      assignedUsersPhoto: ['assets/icons/person.svg'],
-      commentsAmount: '1',
-    },
-  ];
-  done = [
-    {
-      id: '1',
-      title: 'Get up',
-      description: 'Get rubbish from the apartment and throw them into the bin',
-      tags: ['Chores', 'Food'],
-      timeLeft: '4 hours',
-      assignedUsersPhoto: ['assets/icons/person.svg'],
-      commentsAmount: '1',
+      id: 1,
+      taskStateName: 'To Do',
+      connectedTo: ['In Progress', 'Done'],
+      color: '#ff0000',
+      tasks: [
+        {
+          id: 1,
+          title: 'Get to work',
+          description: 'Get rubbish from the apartment and throw them into the bin',
+          tags: ['Chores', 'Food'],
+          timeLeft: '4 hours',
+          assignedUsersPhoto: ['assets/icons/person.svg'],
+          commentsAmount: '1',
+        },
+      ],
     },
     {
-      id: '2',
-      title: 'Brush teeth',
-      description: 'Get rubbish from the apartment and throw them into the bin',
-      tags: ['Chores', 'Food'],
-      timeLeft: '4 hours',
-      assignedUsersPhoto: ['assets/icons/person.svg', 'assets/icons/person.svg'],
-      commentsAmount: '1',
+      id: 2,
+      taskStateName: 'In Progress',
+      connectedTo: ['To Do', 'Done'],
+      color: '#ffa500',
+      tasks: [
+        {
+          id: 2,
+          title: 'Pick up groceries',
+          description: 'Get rubbish from the apartment and throw them into the bin',
+          tags: ['Chores', 'Food'],
+          timeLeft: '4 hours',
+          assignedUsersPhoto: ['assets/icons/person.svg'],
+          commentsAmount: '1',
+        },
+      ],
+    },
+    {
+      id: 3,
+      taskStateName: 'Done',
+      connectedTo: ['To Do', 'In Progress'],
+      color: '#006d38',
+      tasks: [
+        {
+          id: 3,
+          title: 'Get up',
+          description: 'Get rubbish from the apartment and throw them into the bin',
+          tags: ['Chores', 'Food'],
+          timeLeft: '4 hours',
+          assignedUsersPhoto: ['assets/icons/person.svg'],
+          commentsAmount: '1',
+        },
+        {
+          id: 4,
+          title: 'Brush teeth',
+          description: 'Get rubbish from the apartment and throw them into the bin',
+          tags: ['Chores', 'Food'],
+          timeLeft: '4 hours',
+          assignedUsersPhoto: ['assets/icons/person.svg', 'assets/icons/person.svg'],
+          commentsAmount: '1',
+        },
+      ],
     },
   ];
 

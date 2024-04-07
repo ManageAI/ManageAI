@@ -1,39 +1,19 @@
 @use '../../../../../../../../../shared/assets/scss/styles.scss' as *;
 
-// TODO: need code refactoring
-
-.todo,
-.inprogress,
-.done {
+.column {
   height: 100%;
   flex: 1;
   padding: 16px 8px;
-}
 
-.todo__title {
-  color: red;
-}
+  &__title {
+    padding: 8px 0;
+    text-align: center;
+    font-size: 20px;
+  }
 
-.inprogress__title {
-  color: orange;
-}
-
-.done__title {
-  color: var(--color-tertiary);
-}
-
-h2 {
-  padding: 8px 0;
-  text-align: center;
-  font-size: 20px;
-}
-
-.example-box {
-  display: flex;
-  justify-content: center;
-  margin: 16px 0;
-}
-
-.example-list {
-  height: 100%;
+  &__task-container {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+  }
 }
