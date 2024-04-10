@@ -1,6 +1,5 @@
 package com.example.managepro.model.canban;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +21,7 @@ public class TaskState {
     private long id;
 
     @Column(name = "name")
-    private String taskStateName;
+    private String name;
 
     @OneToMany(mappedBy = "taskState", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Task> taskIds;
@@ -31,4 +30,7 @@ public class TaskState {
     @JoinColumn(name = "project_id")
     private Project project;
 
+    private String color;
+
+    private Integer ordinal;
 }

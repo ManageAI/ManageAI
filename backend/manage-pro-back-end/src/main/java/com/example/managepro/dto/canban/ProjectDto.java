@@ -1,5 +1,6 @@
 package com.example.managepro.dto.canban;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,7 +13,10 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class ProjectDto {
+    @NotNull
     private long id;
-    private String projectName;
+    @NotNull
+    private String name;
+    @NotNull
     private List<TaskStateDto> taskStates;
 }
