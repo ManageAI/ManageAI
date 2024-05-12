@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginForm } from 'apps/manage-ai/src/core/interfaces/login-form.interface';
+import { LoginFormData } from 'apps/manage-ai/src/core/interfaces/login-form-data.interface';
 import { RouterLink } from '@angular/router';
 import { InputComponent } from '@frontend/ui-components';
 import { ButtonComponent } from '@frontend/ui-components';
@@ -14,7 +14,7 @@ import { ButtonComponent } from '@frontend/ui-components';
   imports: [FormsModule, ReactiveFormsModule, InputComponent, RouterLink, ButtonComponent],
 })
 export class LoginComponent {
-  @Output() signIn = new EventEmitter<LoginForm>();
+  @Output() signIn = new EventEmitter<LoginFormData>();
 
   iconEmail = 'assets/icons/email.svg';
   iconPassword = 'assets/icons/password.svg';
@@ -29,11 +29,6 @@ export class LoginComponent {
   signInUser(): void {
     if (this.loginForm.invalid) return;
 
-    const loginForm: LoginForm = {
-      email: this.loginForm.controls.email.value,
-      password: this.loginForm.controls.password.value,
-    };
-
-    this.signIn.emit(loginForm);
+    this.signIn.emit(this.loginForm.getRawValue());
   }
 }

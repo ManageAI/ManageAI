@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RegisterForm } from '../../../core/interfaces/register-form.interface';
+import { RegisterFormData } from '../../../core/interfaces/register-form-data.interface';
 import { RouterLink } from '@angular/router';
 import { InputComponent } from '@frontend/ui-components';
 import { ButtonComponent } from '@frontend/ui-components';
@@ -14,7 +14,7 @@ import { ButtonComponent } from '@frontend/ui-components';
   imports: [FormsModule, ReactiveFormsModule, InputComponent, RouterLink, ButtonComponent],
 })
 export class SignupComponent {
-  @Output() signUp: EventEmitter<RegisterForm> = new EventEmitter();
+  @Output() signUp = new EventEmitter<RegisterFormData>();
 
   iconUser = 'assets/icons/user.svg';
   iconEmail = 'assets/icons/email.svg';
@@ -33,12 +33,8 @@ export class SignupComponent {
   public createAccount(): void {
     if (this.signUpForm.invalid) return;
 
-    const signUpForm: RegisterForm = {
-      fullName: this.signUpForm.controls.fullName.value,
-      email: this.signUpForm.controls.email.value,
-      password: this.signUpForm.controls.password.value,
-    };
+    const { confirmPassword, ...signUpFormData } = this.signUpForm.getRawValue();
 
-    this.signUp.emit(signUpForm);
+    this.signUp.emit(signUpFormData);
   }
 }

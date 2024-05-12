@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationService } from '../../core/services/authentication.service';
 import { Router } from '@angular/router';
-import { LoginForm } from '../../core/interfaces/login-form.interface';
-import { RegisterForm } from '../../core/interfaces/register-form.interface';
+import { LoginFormData } from '../../core/interfaces/login-form-data.interface';
+import { RegisterFormData } from '../../core/interfaces/register-form-data.interface';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { NgStyle, NgIf } from '@angular/common';
@@ -41,13 +41,13 @@ export class AuthenticationComponent implements OnInit, OnDestroy {
     this.isLoginPath = this._router.url === '/login';
   }
 
-  public signIn(form: LoginForm): void {
+  public signIn(form: LoginFormData): void {
     this._subsink.sink = this._authService.authentication('login', form).subscribe((roles) => {
       this._navigateToProfile(roles);
     });
   }
 
-  public signUp(form: RegisterForm): void {
+  public signUp(form: RegisterFormData): void {
     this._subsink.sink = this._authService.authentication('signup', form).subscribe((roles) => {
       this._navigateToProfile(roles);
     });
