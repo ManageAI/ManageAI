@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   CdkDragDrop,
@@ -9,6 +9,7 @@ import {
 } from '@angular/cdk/drag-drop';
 import { TagComponent } from '@frontend/ui-components';
 import { TaskComponent } from './task/task.component';
+import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-dashboard-canban',
@@ -17,8 +18,11 @@ import { TaskComponent } from './task/task.component';
   standalone: true,
   imports: [CommonModule, CdkDrag, CdkDropList, TagComponent, TaskComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [DashboardService],
 })
 export class DashboardCanbanComponent {
+  private _dashboardService = inject(DashboardService);
+
   taskStates = [
     {
       id: 1,
@@ -83,6 +87,8 @@ export class DashboardCanbanComponent {
   ];
 
   public drop(event: CdkDragDrop<any[]>): void {
+    this._dashboardService.getTaskState().subscribe((x) => console.log(x));
+
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
