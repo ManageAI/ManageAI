@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin
 public class ProjectController {
     private final ProjectService projectService;
     private static final String CREATE_PROJECT = "/api/v1/projects";
