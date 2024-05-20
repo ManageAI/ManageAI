@@ -1,7 +1,8 @@
 <ng-container *ngFor="let state of taskStates">
   <div class="column">
     <h2 class="column__title" [style]="{ color: state.color }">
-      {{ state.taskStateName }} ({{ state.tasks.length }})
+      {{ state.taskStateName }}
+      <span class="column__title-task-amount">({{ state.tasks.length }})</span>
     </h2>
     <div
       [id]="state.taskStateName"

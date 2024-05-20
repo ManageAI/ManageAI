@@ -1,3 +1,5 @@
+@import '../../../../../shared/assets/scss/styles.scss';
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -33,5 +35,11 @@
 
   p {
     padding: 0 10px;
+  }
+}
+
+@include for-desktop-or-smaller {
+  p {
+    display: none;
   }
 }

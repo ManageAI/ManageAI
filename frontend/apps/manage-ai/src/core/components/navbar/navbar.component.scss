@@ -1,3 +1,5 @@
+@import '../../../../../shared/assets/scss/styles.scss';
+
 .nav {
   height: 100%;
   width: 100%;
@@ -15,16 +17,15 @@
   &__link {
     display: flex;
     align-items: center;
+    min-width: 100px;
     margin: 8px 0;
-    height: 48px;
     font-size: 14px;
     border-radius: 8px;
     transition: 0.2s;
     cursor: pointer;
 
-    &:hover {
-      background-color: var(--color-tertiary);
-      color: var(--color-primary);
+    &:hover:not(&--active) {
+      background-color: var(--color-background-content);
     }
 
     &--active {
@@ -39,10 +40,25 @@
 
   &__icon {
     display: flex;
-    padding: 10px;
+    padding: 5px 10px;
+  }
+}
 
-    &:hover {
-      color: var(--color-primary);
-    }
+@include for-desktop-or-smaller {
+  .nav__title {
+    font-size: 30px;
+  }
+
+  .nav__link {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .nav__icon-container {
+    padding: 5px 10px;
+  }
+
+  .nav__text {
+    padding: 5px 10px;
   }
 }

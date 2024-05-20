@@ -1,8 +1,8 @@
 <nav class="nav">
   <h1 class="nav__title">ManageAI</h1>
-  <div class="nav__links">
+  <ul class="nav__links">
     <ng-container *ngFor="let link of navbarLinks">
-      <div
+      <li
         class="nav__link"
         [ngClass]="{ 'nav__link--active': link.name === selectedLink }"
         (click)="selectLink(link.name)"
@@ -13,7 +13,7 @@
         <div class="nav__text">
           <p>{{ link.name | translate | titlecase }}</p>
         </div>
-      </div>
+      </li>
     </ng-container>
-  </div>
+  </ul>
 </nav>

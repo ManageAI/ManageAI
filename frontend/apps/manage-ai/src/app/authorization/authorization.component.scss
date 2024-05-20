@@ -2,7 +2,7 @@
 
 .app-container {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: minmax(185px, 17%) 1fr;
   grid-template-rows: 70px 1fr;
   grid-template-areas:
     'navbar header'
@@ -24,5 +24,11 @@
     overflow: auto;
     border-radius: 16px;
     margin: 0 16px 16px;
+  }
+}
+
+@include for-desktop-or-smaller {
+  .app-container {
+    grid-template-columns: 132px 1fr;
   }
 }
