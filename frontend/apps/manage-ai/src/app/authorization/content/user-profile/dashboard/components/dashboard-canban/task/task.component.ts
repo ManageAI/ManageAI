@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TagComponent } from '@frontend/ui-components';
+import { Task } from '../../../interfaces/task.interface';
 
 @Component({
   selector: 'app-task',
@@ -10,5 +11,5 @@ import { TagComponent } from '@frontend/ui-components';
   styleUrls: ['./task.component.scss'],
 })
 export class TaskComponent {
-  @Input() task!: any;
+  @Input() task!: Task;
 }

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   CdkDragDrop,
@@ -9,7 +9,8 @@ import {
 } from '@angular/cdk/drag-drop';
 import { TagComponent } from '@frontend/ui-components';
 import { TaskComponent } from './task/task.component';
-import { DashboardService } from '../../services/dashboard.service';
+import { Observable } from 'rxjs';
+import { TaskState } from '../../interfaces/task-state.interface';
 
 @Component({
   selector: 'app-dashboard-canban',
@@ -18,12 +19,11 @@ import { DashboardService } from '../../services/dashboard.service';
   standalone: true,
   imports: [CommonModule, CdkDrag, CdkDropList, TagComponent, TaskComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [DashboardService],
 })
 export class DashboardCanbanComponent {
-  private _dashboardService = inject(DashboardService);
+  @Input() taskStates$!: Observable<TaskState[]>;
 
-  taskStates = [
+  taskState = [
     {
       id: 1,
       taskStateName: 'To Do',
@@ -41,54 +41,9 @@ export class DashboardCanbanComponent {
         },
       ],
     },
-    {
-      id: 2,
-      taskStateName: 'In Progress',
-      connectedTo: ['To Do', 'Done'],
-      color: '#ffa500',
-      tasks: [
-        {
-          id: 2,
-          title: 'Pick up groceries',
-          description: 'Get rubbish from the apartment and throw them into the bin',
-          tags: ['Chores', 'Food'],
-          timeLeft: '4 hours',
-          assignedUsersPhoto: ['assets/icons/person.svg'],
-          commentsAmount: '1',
-        },
-      ],
-    },
-    {
-      id: 3,
-      taskStateName: 'Done',
-      connectedTo: ['To Do', 'In Progress'],
-      color: '#006d38',
-      tasks: [
-        {
-          id: 3,
-          title: 'Get up',
-          description: 'Get rubbish from the apartment and throw them into the bin',
-          tags: ['Chores', 'Food'],
-          timeLeft: '4 hours',
-          assignedUsersPhoto: ['assets/icons/person.svg'],
-          commentsAmount: '1',
-        },
-        {
-          id: 4,
-          title: 'Brush teeth',
-          description: 'Get rubbish from the apartment and throw them into the bin',
-          tags: ['Chores', 'Food'],
-          timeLeft: '4 hours',
-          assignedUsersPhoto: ['assets/icons/person.svg', 'assets/icons/person.svg'],
-          commentsAmount: '1',
-        },
-      ],
-    },
   ];
 
   public drop(event: CdkDragDrop<any[]>): void {
-    this._dashboardService.getTaskState().subscribe((x) => console.log(x));
-
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
