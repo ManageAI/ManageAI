@@ -18,7 +18,7 @@ import { TaskState } from '../interfaces/task-state.interface';
 export class DashboardPage implements OnInit {
   taskStates$!: Observable<TaskState[]>;
 
-  private _dashboardService = inject(DashboardService);
+  private _dashboardService = inject(DashboardService, { self: true });
 
   public ngOnInit(): void {
     this.taskStates$ = this._dashboardService.getTaskState();
