@@ -1,0 +1,6 @@
+<ui-modal title="Filters" body="filterTasks" (confirmEvent)="confirm()">
+  <div class="filters">
+    <ui-filter [props]="mockData" [placeholder]="'Filter by users'"></ui-filter>
+    <ui-filter [props]="mockDataTags" [placeholder]="'Filter by tags'"></ui-filter>
+  </div>
+</ui-modal>
