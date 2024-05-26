@@ -6,4 +6,5 @@ export interface Task {
   timeLeft: string;
   assignedUsersPhoto: string[];
   commentsAmount: string;
+  isTaskFinished: boolean;
 }

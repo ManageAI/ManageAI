@@ -38,6 +38,7 @@ export class DashboardCanbanComponent {
           timeLeft: '4 hours',
           assignedUsersPhoto: ['assets/icons/person.svg'],
           commentsAmount: '1',
+          isTaskFinished: false,
         },
       ],
     },
