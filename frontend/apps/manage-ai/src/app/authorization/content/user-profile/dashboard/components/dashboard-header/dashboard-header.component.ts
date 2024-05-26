@@ -5,7 +5,7 @@ import { SvgIconComponent } from 'angular-svg-icon';
 import { ButtonComponent } from '@frontend/ui-components';
 import { FilterComponent } from '@frontend/ui-components';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { AddTaskModalComponent } from '../../../../../../../core/components/add-task-modal/add-task-modal.component';
+import { AddTaskModalComponent } from '../../../../../../../core/components/modals/add-task-modal/add-task-modal.component';
 
 @Component({
   selector: 'app-dashboard-header',
