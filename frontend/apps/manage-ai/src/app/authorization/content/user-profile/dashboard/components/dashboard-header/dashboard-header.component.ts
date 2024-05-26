@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SvgIconComponent } from 'angular-svg-icon';
@@ -6,6 +6,7 @@ import { ButtonComponent } from '@frontend/ui-components';
 import { FilterComponent } from '@frontend/ui-components';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AddTaskModalComponent } from '../../../../../../../core/components/modals/add-task-modal/add-task-modal.component';
+import { FilterModalComponent } from 'apps/manage-ai/src/core/components/modals/filter-modal/filter-modal.component';
 
 @Component({
   selector: 'app-dashboard-header',
@@ -22,8 +23,10 @@ import { AddTaskModalComponent } from '../../../../../../../core/components/moda
   styleUrls: ['./dashboard-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DashboardHeaderComponent {
+export class DashboardHeaderComponent implements OnInit {
   addIconSrc = 'assets/icons/add-icon.svg';
+
+  isTablet: boolean = false;
 
   mockData = [
     {
@@ -62,10 +65,33 @@ export class DashboardHeaderComponent {
     { id: '3', name: 'Smoke' },
   ];
 
-  constructor(public dialog: MatDialog) {}
+  private _dialog = inject(MatDialog);
 
-  public openModal(): void {
-    const modalRef = this.dialog.open(AddTaskModalComponent, {
+  @HostListener('window:resize', ['$event']) onResize() {
+    this._checkScreenSize();
+  }
+
+  public ngOnInit(): void {
+    this._checkScreenSize();
+  }
+
+  private _checkScreenSize(): void {
+    this.isTablet = window.innerWidth <= 992;
+  }
+
+  public openFilterModal(): void {
+    const modalRef = this._dialog.open(FilterModalComponent, {
+      height: '250px',
+      width: '600px',
+    });
+
+    modalRef.afterClosed().subscribe((x) => {
+      console.log(x);
+    });
+  }
+
+  public openAddTaskModal(): void {
+    const modalRef = this._dialog.open(AddTaskModalComponent, {
       height: '200px',
       width: '500px',
     });
