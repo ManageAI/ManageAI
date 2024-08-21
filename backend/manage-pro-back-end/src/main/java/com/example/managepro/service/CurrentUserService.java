@@ -31,7 +31,7 @@ public class CurrentUserService {
                     return CurrentUserDTO.builder()
                             .email(currentUser.get().getUserEmail())
                             .fullName(currentUser.get().getUserName())
-                            .userRoles(new HashSet<>(currentUser.get().getRoles().stream().map(Role::getName).collect(Collectors.toSet())))
+                            .userRoles(new HashSet<>(currentUser.get().getRoles().stream().map(role -> role.getName().toString()).collect(Collectors.toSet())))
                             .build();
                 }
             }

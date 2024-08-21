@@ -1,0 +1,26 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  margin: 0 8px;
+  height: 100%;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    padding: 16px;
+  }
+
+  &__canban {
+    height: 100%;
+  }
+}
+
+.header {
+  width: 100%;
+}
+
+.canban {
+  display: flex;
+  height: 100%;
+}

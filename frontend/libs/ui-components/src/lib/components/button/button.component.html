@@ -1,0 +1,6 @@
+<button class="button" [style.width]="width" [type]="type" (click)="emitClick.emit()">
+  <ng-container *ngIf="iconSrc">
+    <svg-icon class="button__img" [src]="iconSrc" alt="" />
+  </ng-container>
+  <p class="button__content">{{ content }}</p>
+</button>

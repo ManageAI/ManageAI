@@ -1,0 +1,34 @@
+@use '../../../../shared/assets/scss/styles.scss' as *;
+
+.app-container {
+  display: grid;
+  grid-template-columns: minmax(185px, 17%) 1fr;
+  grid-template-rows: 70px 1fr;
+  grid-template-areas:
+    'navbar header'
+    'navbar content';
+  height: 100vh;
+
+  &__navbar {
+    grid-area: navbar;
+    margin: 16px;
+  }
+
+  &__header {
+    grid-area: header;
+  }
+
+  &__content {
+    background-color: var(--color-background-content);
+    grid-area: content;
+    overflow: auto;
+    border-radius: 16px;
+    margin: 0 16px 16px;
+  }
+}
+
+@include for-desktop-or-smaller {
+  .app-container {
+    grid-template-columns: 132px 1fr;
+  }
+}

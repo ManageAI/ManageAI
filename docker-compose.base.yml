@@ -1,12 +1,13 @@
-version: '3'
+version: "3"
 
 services:
   nx-app-base:
+    restart: always
     build:
       context: ./frontend
-      dockerfile: /Dockerfile
-      environment:
-        - DEV_PLATFORM=DOCKER
-      volumes:
-        - ./:/app
-        - mono-node-modules:/app/node_modules
+      dockerfile: Dockerfile
+    environment:
+      - DEV_PLATFORM=DOCKER
+    volumes:
+      - ./frontend:/app
+      - mono-node-modules:/app/node_modules

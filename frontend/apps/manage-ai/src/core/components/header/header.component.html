@@ -1,1 +1,14 @@
-<p>header works!</p>
+<header class="header">
+  <h1 class="header__headline">Dashboard</h1>
+  <div class="header__search">
+    <ui-input-search [iconSrc]="'assets/icons/search-icon.svg'" [placeholder]="'Search'" />
+  </div>
+  <!-- MOCK VALUES -->
+  <div class="header__profile">
+    <svg-icon class="profile__img" src="assets/icons/notifications.svg" alt="notifications" />
+    <div class="profile__photo" appProfileDropdown>
+      <img class="person" src="assets/icons/person.svg" alt="" />
+    </div>
+    <p class="profile__username">Rajesh Singh</p>
+  </div>
+</header>

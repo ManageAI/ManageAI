@@ -1,1 +1,19 @@
-<p>navbar works!</p>
+<nav class="nav">
+  <h1 class="nav__title">ManageAI</h1>
+  <ul class="nav__links">
+    <ng-container *ngFor="let link of navbarLinks">
+      <li
+        class="nav__link"
+        [ngClass]="{ 'nav__link--active': link.name === selectedLink }"
+        (click)="selectLink(link.name)"
+      >
+        <div class="nav__icon-container">
+          <svg-icon class="nav__icon" [src]="link.iconSrc" />
+        </div>
+        <div class="nav__text">
+          <p>{{ link.name | translate | titlecase }}</p>
+        </div>
+      </li>
+    </ng-container>
+  </ul>
+</nav>

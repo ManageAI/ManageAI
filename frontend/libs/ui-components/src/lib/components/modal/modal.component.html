@@ -1,0 +1,15 @@
+<div class="modal">
+  <div class="modal__header">
+    <h3>{{ title }}</h3>
+    <svg-icon src="lib/assets/cancel-modal.svg" alt="Cancel" (click)="close()" />
+  </div>
+
+  <div class="modal__body">
+    <ng-content></ng-content>
+  </div>
+
+  <div class="modal__footer">
+    <ui-button content="Cancel" width="75px" (click)="close()"></ui-button>
+    <ui-button content="Confirm" width="75px" (click)="confirm()"></ui-button>
+  </div>
+</div>

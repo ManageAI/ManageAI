@@ -1,0 +1,16 @@
+<ng-container *ngIf="!itemContent">
+  <div class="tag tag--user">
+    <img *ngIf="item.img" [src]="item.img" alt="User Photo" width="20" height="20" />
+    <p>{{ item.name | displayName }}</p>
+    <svg-icon
+      class="tag__icon"
+      src="lib/assets/cancel.svg"
+      alt="Cancel"
+      (click)="removeTag.emit({item, $event})"
+    />
+  </div>
+</ng-container>
+
+<ng-container *ngIf="itemContent">
+  <div class="tag">{{ itemContent }}</div>
+</ng-container>

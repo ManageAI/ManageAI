@@ -1,0 +1,20 @@
+<ng-container *ngFor="let state of taskStates$ | async">
+  <div class="column">
+    <h2 class="column__title" [style]="{ color: state.color }">
+      {{ state.name }}
+      <span class="column__title-task-amount">({{ state.tasks.length }})</span>
+    </h2>
+    <div
+      [id]="state.name"
+      class="u-height-100"
+      cdkDropList
+      [cdkDropListData]="taskState[0].tasks"
+      [cdkDropListConnectedTo]="state.connectedTo"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <ng-container *ngFor="let task of taskState[0].tasks">
+        <app-task class="column__task-container" [task]="task" cdkDrag></app-task>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>

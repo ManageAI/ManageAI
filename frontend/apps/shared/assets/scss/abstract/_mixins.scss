@@ -4,12 +4,12 @@
   border: 1px solid $color-tertiary;
   border-radius: 50px;
   background-color: $color-tertiary;
-  color: $color-secondary;
+  color: $color-primary;
   transition: 0.3s;
   cursor: pointer;
 
   &:hover {
-    background-color: $color-secondary;
+    background-color: $color-primary;
     color: $color-tertiary;
   }
 }

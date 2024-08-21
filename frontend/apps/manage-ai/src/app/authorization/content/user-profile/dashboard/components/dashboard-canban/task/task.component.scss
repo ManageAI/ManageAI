@@ -1,0 +1,51 @@
+@use '../../../../../../../../../../shared/assets/scss/styles.scss' as *;
+
+.task {
+  background-color: var(--color-primary);
+  border-radius: 16px;
+  max-width: 328px;
+  min-width: 220px;
+  height: 212px;
+  padding: 24px;
+
+  &__title {
+    font-size: 18px;
+  }
+
+  &__description {
+    font-size: 14px;
+    color: var(--color-description);
+  }
+
+  &__tags {
+    display: flex;
+    margin-top: 18px;
+  }
+
+  &__users {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+
+  &__tag:not(:first-child) {
+    margin: 0 10px;
+  }
+
+  &__time {
+    font-size: 11px;
+    color: #6d7b6d;
+  }
+
+  &__assigned-users {
+    display: flex;
+  }
+
+  &__comments {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin: 0 15px;
+    color: #6d7b6d;
+  }
+}

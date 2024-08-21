@@ -1,0 +1,52 @@
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid var(--color-outline);
+  width: 250px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--color-outline);
+
+  &:focus-within {
+    border: 1px solid var(--color-tertiary);
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+  }
+
+  &__input {
+    height: 100%;
+    font-size: 14px;
+    padding: 0 5px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--color-outline);
+    background-color: transparent;
+    outline: none;
+  }
+
+  &__tags {
+    display: flex;
+  }
+
+  &__more-tags {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+  }
+
+  &__tag {
+    margin-right: 5px;
+  }
+}
+
+.select:focus-within .select__icon {
+  color: var(--color-tertiary);
+  transform: rotate(180deg);
+}

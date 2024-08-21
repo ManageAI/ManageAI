@@ -1,17 +1,17 @@
 package com.example.managepro.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
-import jakarta.persistence.GenerationType;
-import lombok.Data;
+import com.example.managepro.enums.RolesEnum;
+import jakarta.persistence.*;
+import lombok.*;
+import org.springframework.data.mongodb.core.index.Indexed;
 
 
 @Entity
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "roles")
 public class Role {
     @Id
@@ -19,7 +19,8 @@ public class Role {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "name")
-    private String name;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "name", unique = true)
+    private RolesEnum name;
 
 }

@@ -1,0 +1,35 @@
+.modal {
+  background-color: var(--color-background-content);
+  padding: 16px;
+  height: 100%;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+  }
+
+  &__body {
+    margin: 16px 0;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    height: 40px;
+  }
+}
+
+ui-button:first-child {
+  margin-right: 8px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+svg-icon {
+  margin-right: 15px;
+  cursor: pointer;
+}

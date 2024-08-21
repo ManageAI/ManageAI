@@ -8,20 +8,9 @@
     </video>
   </div>
   <div class="auth-container">
-    <div
-      class="manual-login"
-      [ngStyle]="isLoginPath ? { 'border-bottom': '1px solid black' } : {}"
-    >
-      <app-login
-        class="login-box"
-        *ngIf="isLoginPath"
-        (signIn)="signIn($event)"
-      />
-      <app-signup
-        class="login-box"
-        *ngIf="!isLoginPath"
-        (signUp)="signUp($event)"
-      />
+    <div class="manual-login" [ngStyle]="isLoginPath ? { 'border-bottom': '1px solid black' } : {}">
+      <app-login class="login-box" *ngIf="isLoginPath" (signIn)="signIn($event)" />
+      <app-signup class="login-box" *ngIf="!isLoginPath" (signUp)="signUp($event)" />
 
       <div *ngIf="isLoginPath" class="manual-login__or-info">OR</div>
     </div>

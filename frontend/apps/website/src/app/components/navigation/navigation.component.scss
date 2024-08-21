@@ -7,15 +7,15 @@
   width: 100%;
   z-index: 10;
   padding: 15px;
-  background-color: $color-primary;
-  color: $color-secondary;
+  background-color: $color-secondary;
+  color: $color-primary;
 
   &__logo {
     display: flex;
     align-items: center;
     margin-right: 10px;
     text-decoration: none;
-    color: $color-secondary;
+    color: $color-primary;
     cursor: pointer;
   }
 
@@ -41,7 +41,7 @@
 
   &__link {
     text-decoration: none;
-    color: $color-secondary;
+    color: $color-primary;
     transition: 0.3s;
 
     &--active {
@@ -66,7 +66,7 @@
   &__line {
     width: 30px;
     height: 4px;
-    background-color: #fff;
+    background-color: $color-primary;
     margin: 5px;
     border-radius: 20px;
     transition: 0.4s;
@@ -104,7 +104,7 @@
       left: 0;
       height: 100%;
       min-width: 100%;
-      color: black;
+      color: $color-secondary;
       background-color: rgba(0%, 0%, 0%, 0.9);
       transform: translateY(-100%);
       transition: 0.3s;

@@ -30,12 +30,7 @@
       margin: 5px 100px;
       width: 12px;
       border-radius: 10px;
-      background: linear-gradient(
-        to bottom,
-        $color-tertiary,
-        $color-primary,
-        $color-tertiary
-      );
+      background: linear-gradient(to bottom, $color-tertiary, $color-secondary, $color-tertiary);
     }
 
     .cards__description {

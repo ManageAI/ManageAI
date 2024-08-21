@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="filters">
+    <ng-container *ngIf="!isTablet; else tabletView">
+      <ui-filter [props]="mockData" [placeholder]="'Filter by users'"></ui-filter>
+      <ui-filter [props]="mockDataTags" [placeholder]="'Filter by tags'"></ui-filter>
+    </ng-container>
+    <ng-template #tabletView>
+      <svg-icon (click)="openFilterModal()" src="assets/icons/filter.svg"></svg-icon>
+    </ng-template>
+  </div>
+  <div class="button">
+    <ui-button
+      [width]="'170px'"
+      [iconSrc]="addIconSrc"
+      [content]="'Add new task'"
+      (emitClick)="openAddTaskModal()"
+    ></ui-button>
+  </div>
+</div>

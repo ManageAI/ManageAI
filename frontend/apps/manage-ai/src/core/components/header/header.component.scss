@@ -1,0 +1,45 @@
+@import '../../../../../shared/assets/scss/styles.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+
+  &__headline {
+    font-weight: unset;
+    font-size: 28px;
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .photo,
+  .person {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+  }
+
+  .profile {
+    &__img {
+      margin: 0 15px;
+      color: var(--color-secondary);
+    }
+  }
+
+  p {
+    padding: 0 10px;
+  }
+}
+
+@include for-desktop-or-smaller {
+  p {
+    display: none;
+  }
+}

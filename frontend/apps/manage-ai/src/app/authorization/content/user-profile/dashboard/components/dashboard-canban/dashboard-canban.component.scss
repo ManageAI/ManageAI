@@ -1,0 +1,25 @@
+@use '../../../../../../../../../shared/assets/scss/styles.scss' as *;
+
+.column {
+  height: 100%;
+  flex: 1;
+  padding: 16px 8px;
+
+  &__title {
+    padding: 8px 0;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  &__title-task-amount {
+    font-weight: lighter;
+    color: var(--color-outline);
+    font-size: 1.3rem;
+  }
+
+  &__task-container {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+  }
+}

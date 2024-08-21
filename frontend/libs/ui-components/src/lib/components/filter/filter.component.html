@@ -1,0 +1,28 @@
+<div
+  class="select"
+  [uiDropdownList]="props"
+  [selectedItems]="selectedItems"
+  (clickOutside)="closeDropdownList($event)"
+  (isDropdownListOpen)="isDropdownListOpen = $event"
+>
+  <input
+    class="select__input"
+    type="text"
+    *ngIf="selectedItems.length === 0 || isDropdownListOpen"
+    [placeholder]="placeholder"
+  />
+  <div class="select__tags" *ngIf="selectedItems.length > 0 && !isDropdownListOpen">
+    <ng-container *ngFor="let item of selectedItems; let i = index">
+      <ui-tag
+        class="select__tag"
+        *ngIf="i < 2"
+        [item]="item"
+        (removeTag)="removeItem($event)"
+      ></ui-tag>
+      <span class="select__more-tags" *ngIf="selectedItems.length > 2 && i === 1"
+        >+{{ selectedItems.length - 2 }}</span
+      >
+    </ng-container>
+  </div>
+  <svg-icon class="select__icon" src="assets/icons/arrow-select.svg" alt="Arrow Select" />
+</div>

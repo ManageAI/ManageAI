@@ -29,7 +29,7 @@
           },
           {
             "glob": "**/*",
-            "input": "libs/shared-components/src/assets",
+            "input": "libs/ui-components/src/assets",
             "output": "lib/assets"
           }
         ],
